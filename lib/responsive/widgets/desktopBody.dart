@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_website/app_bar_section/app_button.dart';
 import 'package:portfolio_website/widgets/about_widget.dart';
 import 'package:portfolio_website/widgets/fading_text_animation.dart';
+import 'package:portfolio_website/widgets/personal_projects_widget.dart';
 import '/widgets/info_widget.dart';
 
 class DesktopBody extends StatelessWidget {
@@ -40,12 +41,13 @@ class DesktopBody extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 25),
+              const SizedBox(height: 35),
               const Center(
                 child: FadingTextAnimation(
                     text: "Anything is easy if you do what has to be done."),
               ),
               const SizedBox(height: 35),
+              // about me section
               const Padding(
                 padding: EdgeInsets.only(left: 50),
                 child: Text(
@@ -54,10 +56,22 @@ class DesktopBody extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 15),
-              // about me section
               AboutWidget(),
               const SizedBox(height: 35),
               // personal projects section
+              const Padding(
+                padding: EdgeInsets.only(left: 50),
+                child: Text(
+                  'Personal projects',
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                ),
+              ),
+              Container(
+                color: Colors.red,
+                width: double.infinity,
+                height: 300,
+                child: PersonalProjects(),
+              ),
             ],
           ),
         ),
