@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_website/widgets/fading_text_animation.dart';
+import '/widgets/info_widget.dart';
 
 class DesktopBody extends StatelessWidget {
   @override
@@ -7,67 +9,29 @@ class DesktopBody extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          child: Column(
             children: [
-              // info column
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  // welcome text + hello emoji hand
-                  Row(
-                    children: [
-                      const Text("Welcome to my portfolio!",
-                          style: TextStyle(fontSize: 30)),
-                      const SizedBox(width: 5),
-                      Image.asset('hello_hand_emoji_web.webp',
-                          width: 20, height: 20),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  // name text
-                  const Text("Costelas", style: TextStyle(fontSize: 35)),
-                  const SizedBox(height: 5),
-                  const Text("Denis",
-                      style: TextStyle(
-                        fontSize: 35,
-                        fontWeight: FontWeight.bold,
-                      )),
-                  const SizedBox(height: 3),
-                  Row(
-                    children: const [
-                      Icon(Icons.arrow_right_rounded, color: Colors.deepPurple),
-                      Text("Flutter Developer")
-                    ],
-                  ),
-                  // social links
-                  const SizedBox(height: 10),
+                  // info column
+                  InfoWidget(),
+                  // Image with me
                   SizedBox(
                     width: 200,
-                    // color: Colors.red,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Image.asset('facebook_blackWeb.webp',
-                            width: 35, height: 35),
-                        Image.asset('githubWeb.webp', width: 35, height: 35),
-                        Image.asset('linkedinWeb.webp', width: 35, height: 35),
-                      ],
+                    height: 200,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(50),
+                      child: Image.asset(
+                        'pozaCuMnLow.jpg',
+                      ),
                     ),
                   ),
                 ],
               ),
-              // Image with me
-              SizedBox(
-                width: 200,
-                height: 200,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(50),
-                  child: Image.asset(
-                    'pozaCuMnLow.jpg',
-                  ),
-                ),
-              ),
+              const SizedBox(height: 25),
+              const FadingTextAnimation(
+                  text: "Anything is easy if you do what has to be done."),
             ],
           ),
         ),
