@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_website/app_bar_section/app_button.dart';
+import 'package:portfolio_website/widgets/about_widget.dart';
 import 'package:portfolio_website/widgets/fading_text_animation.dart';
 import '/widgets/info_widget.dart';
 
@@ -6,10 +8,19 @@ class DesktopBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          const AppButton(scrollTo: null, text: 'Home'),
+          const AppButton(scrollTo: null, text: 'About'),
+          const AppButton(scrollTo: null, text: 'Projects'),
+          const AppButton(scrollTo: null, text: 'Resume'),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -30,8 +41,20 @@ class DesktopBody extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 25),
-              const FadingTextAnimation(
-                  text: "Anything is easy if you do what has to be done."),
+              const Center(
+                child: FadingTextAnimation(
+                    text: "Anything is easy if you do what has to be done."),
+              ),
+              const SizedBox(height: 35),
+              const Padding(
+                padding: EdgeInsets.only(left: 50),
+                child: Text(
+                  'About me',
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                ),
+              ),
+              const SizedBox(height: 15),
+              AboutWidget(),
             ],
           ),
         ),

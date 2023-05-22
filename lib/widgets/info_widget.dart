@@ -10,18 +10,18 @@ class InfoWidget extends StatelessWidget {
         Row(
           children: [
             const Text("Welcome to my portfolio!",
-                style: TextStyle(fontSize: 30)),
+                style: TextStyle(fontSize: 40)),
             const SizedBox(width: 5),
-            Image.asset('hello_hand_emoji_web.webp', width: 20, height: 20),
+            Image.asset('hello_hand_emoji_web.webp', width: 30, height: 30),
           ],
         ),
         const SizedBox(height: 20),
         // name text
-        const Text("Costelas", style: TextStyle(fontSize: 35)),
+        const Text("Costelas", style: TextStyle(fontSize: 45)),
         const SizedBox(height: 5),
         const Text("Denis",
             style: TextStyle(
-              fontSize: 35,
+              fontSize: 45,
               fontWeight: FontWeight.bold,
             )),
         const SizedBox(height: 3),

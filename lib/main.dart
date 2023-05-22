@@ -16,6 +16,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: GoogleFonts.montserratTextTheme(),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.white,
+          primary: Colors.blueGrey,
+          secondary: Colors.white,
+        ),
       ),
       home: HomePage(),
     );
