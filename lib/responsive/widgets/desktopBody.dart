@@ -54,7 +54,10 @@ class DesktopBody extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 15),
+              // about me section
               AboutWidget(),
+              const SizedBox(height: 35),
+              // personal projects section
             ],
           ),
         ),
