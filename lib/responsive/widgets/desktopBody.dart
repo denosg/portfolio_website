@@ -66,8 +66,7 @@ class DesktopBody extends StatelessWidget {
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
               ),
-              Container(
-                color: Colors.red,
+              SizedBox(
                 width: double.infinity,
                 height: 300,
                 child: PersonalProjects(),

@@ -45,43 +45,52 @@ class _ProjectWidgetState extends State<ProjectWidget> {
       onTap: () {
         // Handle onTap event if needed
       },
-      child: Container(
-        width: 100,
-        height: 100,
-        child: Stack(
-          children: [
-            AnimatedSwitcher(
-              duration: Duration(milliseconds: 300),
-              child: AnimatedOpacity(
-                key: ValueKey<String>(widget.photoList[hoveredIndex]),
-                opacity: 1.0,
-                duration: Duration(milliseconds: 300),
-                child: Image.asset(
-                  widget.photoList[hoveredIndex],
-                  width: double.infinity,
-                  height: double.infinity,
-                  fit: BoxFit.cover,
-                ),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 22),
+        child: Card(
+          elevation: 4,
+          color: Colors.grey[300],
+          child: SizedBox(
+            width: 350,
+            height: 300,
+            child: Center(
+              child: Stack(
+                children: [
+                  AnimatedSwitcher(
+                    duration: Duration(milliseconds: 300),
+                    child: AnimatedOpacity(
+                      key: ValueKey<String>(widget.photoList[hoveredIndex]),
+                      opacity: 1.0,
+                      duration: Duration(milliseconds: 300),
+                      child: Image.asset(
+                        widget.photoList[hoveredIndex],
+                        width: 300,
+                        height: 250,
+                        fit: BoxFit.fitHeight,
+                      ),
+                    ),
+                  ),
+                  Positioned.fill(
+                    child: MouseRegion(
+                      onEnter: (_) {
+                        setState(() {
+                          isHovered = true;
+                          startSlideshow();
+                        });
+                      },
+                      onExit: (_) {
+                        setState(() {
+                          isHovered = false;
+                          stopSlideshow();
+                        });
+                      },
+                      child: Container(),
+                    ),
+                  ),
+                ],
               ),
             ),
-            Positioned.fill(
-              child: MouseRegion(
-                onEnter: (_) {
-                  setState(() {
-                    isHovered = true;
-                    startSlideshow();
-                  });
-                },
-                onExit: (_) {
-                  setState(() {
-                    isHovered = false;
-                    stopSlideshow();
-                  });
-                },
-                child: Container(),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );

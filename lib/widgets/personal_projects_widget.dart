@@ -1,20 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_website/providers/calculator_consum_provider.dart';
-import 'package:portfolio_website/providers/quest_realm_provider.dart';
+import 'package:portfolio_website/providers/photo_list.dart';
 import 'package:portfolio_website/widgets/project_widget.dart';
 
-class PersonalProjects extends StatelessWidget {
-  final calcSumList = CalculatorConsumProvider().photoList;
-  final questRealmList = QuestRealmProvider().photoList;
+class PersonalProjects extends StatefulWidget {
+  @override
+  State<PersonalProjects> createState() => _PersonalProjectsState();
+}
 
+class _PersonalProjectsState extends State<PersonalProjects>
+    with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      scrollDirection: Axis.horizontal,
-      children: [
-        ProjectWidget(photoList: calcSumList),
-        ProjectWidget(photoList: questRealmList),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(22),
+      child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              ProjectWidget(photoList: calcSumList),
+              ProjectWidget(photoList: questRealmList),
+              ProjectWidget(photoList: fakeLocList),
+              ProjectWidget(photoList: beyondFirstList),
+            ],
+          )),
     );
   }
 }
