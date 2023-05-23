@@ -48,25 +48,33 @@ class _ProjectWidgetState extends State<ProjectWidget> {
       child: Padding(
         padding: const EdgeInsets.only(left: 22),
         child: Card(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
           elevation: 4,
           color: Colors.grey[300],
           child: SizedBox(
-            width: 350,
-            height: 300,
+            width: 400,
+            height: 450,
             child: Center(
               child: Stack(
                 children: [
                   AnimatedSwitcher(
-                    duration: Duration(milliseconds: 300),
+                    duration: const Duration(milliseconds: 300),
                     child: AnimatedOpacity(
                       key: ValueKey<String>(widget.photoList[hoveredIndex]),
                       opacity: 1.0,
-                      duration: Duration(milliseconds: 300),
-                      child: Image.asset(
-                        widget.photoList[hoveredIndex],
-                        width: 300,
-                        height: 250,
-                        fit: BoxFit.fitHeight,
+                      duration: const Duration(milliseconds: 300),
+                      child: Padding(
+                        padding: const EdgeInsets.all(15),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.asset(
+                            widget.photoList[hoveredIndex],
+                            width: 300,
+                            height: 350,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
                     ),
                   ),
