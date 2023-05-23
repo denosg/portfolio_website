@@ -28,7 +28,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
   }
 
   void startSlideshow() {
-    timer = Timer.periodic(Duration(seconds: 1), (_) {
+    timer = Timer.periodic(const Duration(seconds: 1), (_) {
       setState(() {
         hoveredIndex = (hoveredIndex + 1) % widget.photoList.length;
       });
