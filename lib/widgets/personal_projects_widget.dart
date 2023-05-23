@@ -13,7 +13,8 @@ class _PersonalProjectsState extends State<PersonalProjects>
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(22),
-      child: SingleChildScrollView(
+      child: Stack(children: [
+        SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
@@ -22,7 +23,27 @@ class _PersonalProjectsState extends State<PersonalProjects>
               ProjectWidget(photoList: fakeLocList),
               ProjectWidget(photoList: beyondFirstList),
             ],
-          )),
+          ),
+        ),
+        Positioned(
+          top: 0,
+          bottom: 0,
+          left: 0,
+          child: IconButton(
+            icon: const Icon(Icons.arrow_left),
+            onPressed: null,
+          ),
+        ),
+        Positioned(
+          top: 0,
+          bottom: 0,
+          right: 0,
+          child: IconButton(
+            icon: const Icon(Icons.arrow_right),
+            onPressed: null,
+          ),
+        ),
+      ]),
     );
   }
 }
