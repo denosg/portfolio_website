@@ -52,7 +52,7 @@ class _PersonalProjectsState extends State<PersonalProjects> {
           },
         ),
         Positioned(
-          left: 16,
+          left: 60,
           child: IconButton(
             icon: const Icon(Icons.arrow_back_ios),
             onPressed: () {
@@ -61,7 +61,7 @@ class _PersonalProjectsState extends State<PersonalProjects> {
           ),
         ),
         Positioned(
-          right: 16,
+          right: 60,
           child: IconButton(
             icon: const Icon(Icons.arrow_forward_ios),
             onPressed: () {
