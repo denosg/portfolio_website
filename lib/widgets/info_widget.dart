@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:html' as html;
 
 class InfoWidget extends StatelessWidget {
   @override
@@ -33,15 +34,42 @@ class InfoWidget extends StatelessWidget {
         ),
         // social links
         const SizedBox(height: 10),
-        SizedBox(
-          width: 200,
+        Container(
+          width: 300,
           // color: Colors.red,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset('facebook_blackWeb.webp', width: 35, height: 35),
-              Image.asset('githubWeb.webp', width: 35, height: 35),
-              Image.asset('linkedinWeb.webp', width: 35, height: 35),
+              Container(
+                width: 60,
+                height: 60,
+                child: IconButton(
+                    onPressed: () {
+                      html.window.open(
+                          "https://www.facebook.com/costelasdenis/", "_blank");
+                    },
+                    icon: Image.asset('facebook_blackWeb.webp')),
+              ),
+              SizedBox(
+                width: 60,
+                height: 60,
+                child: IconButton(
+                    onPressed: () {
+                      html.window.open("https://github.com/denosg", "_blank");
+                    },
+                    icon: Image.asset('githubWeb.webp')),
+              ),
+              SizedBox(
+                width: 60,
+                height: 60,
+                child: IconButton(
+                    onPressed: () {
+                      html.window.open(
+                          "https://www.linkedin.com/in/costelas-denis-3b1042236/",
+                          "_blank");
+                    },
+                    icon: Image.asset('linkedinWeb.webp')),
+              ),
             ],
           ),
         ),
