@@ -53,6 +53,7 @@ class _PersonalProjectsState extends State<PersonalProjects> {
                       photoList: projectPhotoLists[idx],
                       title: projectTitle[idx],
                       description: projectDesc[idx],
+                      url: projectUrl[idx],
                     ),
                   ),
                 );
@@ -92,5 +93,12 @@ class _PersonalProjectsState extends State<PersonalProjects> {
     descQuest,
     descFakeLoc,
     descBeyond,
+  ];
+
+  List<String> projectUrl = [
+    urlCalc,
+    urlQuest,
+    urlFakeLoc,
+    urlBeyond,
   ];
 }
