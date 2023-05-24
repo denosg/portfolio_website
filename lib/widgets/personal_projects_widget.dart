@@ -1,12 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 import 'package:portfolio_website/providers/photo_list.dart';
 import 'package:portfolio_website/widgets/project_widget.dart';
-
-// TODO: add description to apps
 
 class PersonalProjects extends StatefulWidget {
   @override
@@ -22,10 +18,19 @@ class _PersonalProjectsState extends State<PersonalProjects> {
     return Stack(
       alignment: Alignment.center,
       children: [
+        Positioned(
+          left: 100,
+          child: IconButton(
+            icon: const Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              controller.previousPage();
+            },
+          ),
+        ),
         CarouselSlider.builder(
           carouselController: controller,
           options: CarouselOptions(
-            aspectRatio: 2.0,
+            aspectRatio: 2.5,
             enlargeCenterPage: false,
             viewportFraction: 1,
             onPageChanged: (index, reason) {
@@ -43,8 +48,12 @@ class _PersonalProjectsState extends State<PersonalProjects> {
                 return Expanded(
                   flex: 1,
                   child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 10),
-                    child: ProjectWidget(photoList: projectPhotoLists[idx]),
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
+                    child: ProjectWidget(
+                      photoList: projectPhotoLists[idx],
+                      title: projectTitle[idx],
+                      description: projectDesc[idx],
+                    ),
                   ),
                 );
               }).toList(),
@@ -52,16 +61,7 @@ class _PersonalProjectsState extends State<PersonalProjects> {
           },
         ),
         Positioned(
-          left: 60,
-          child: IconButton(
-            icon: const Icon(Icons.arrow_back_ios),
-            onPressed: () {
-              controller.previousPage();
-            },
-          ),
-        ),
-        Positioned(
-          right: 60,
+          right: 100,
           child: IconButton(
             icon: const Icon(Icons.arrow_forward_ios),
             onPressed: () {
@@ -78,5 +78,19 @@ class _PersonalProjectsState extends State<PersonalProjects> {
     questRealmList,
     fakeLocList,
     beyondFirstList,
+  ];
+
+  List<String> projectTitle = [
+    titleCalc,
+    titleQuest,
+    titleFakeLoc,
+    titleBeyond,
+  ];
+
+  List<String> projectDesc = [
+    descCalc,
+    descQuest,
+    descFakeLoc,
+    descBeyond,
   ];
 }
