@@ -29,7 +29,7 @@ class DesktopBody extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          const AppButton(scrollTo: scrolltoHome, text: 'Home'),
+          const AppButton(scrollTo: null, text: 'Home'),
           const AppButton(scrollTo: null, text: 'About'),
           const AppButton(scrollTo: null, text: 'Projects'),
           TextButton(
