@@ -6,9 +6,12 @@ import 'package:roulette/roulette.dart';
 import './arrow_roulette.dart';
 
 class MyRoulette extends StatelessWidget {
+  final double fontSize;
+
   const MyRoulette({
     Key? key,
     required this.controller,
+    required this.fontSize,
   }) : super(key: key);
 
   final RouletteController controller;
@@ -17,9 +20,9 @@ class MyRoulette extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text(
+        Text(
           "Sa colaboram cu Denis ?",
-          style: TextStyle(fontSize: 25),
+          style: TextStyle(fontSize: fontSize),
         ),
         const SizedBox(height: 10),
         Stack(
@@ -51,6 +54,10 @@ class MyRoulette extends StatelessWidget {
 }
 
 class RouletteScreen extends StatefulWidget {
+  final double fontSize;
+
+  const RouletteScreen({super.key, required this.fontSize});
+
   @override
   State<RouletteScreen> createState() => _RouletteScreenState();
 }
@@ -85,7 +92,10 @@ class _RouletteScreenState extends State<RouletteScreen>
     return Center(
       child: Column(
         children: [
-          MyRoulette(controller: _controller),
+          MyRoulette(
+            controller: _controller,
+            fontSize: widget.fontSize,
+          ),
           const SizedBox(
             height: 20,
           ),

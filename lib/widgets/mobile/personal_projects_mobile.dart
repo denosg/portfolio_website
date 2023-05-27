@@ -4,14 +4,14 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:portfolio_website/providers/photo_list.dart';
 import 'package:portfolio_website/widgets/project_widget.dart';
 
-class PersonalProjects extends StatefulWidget {
-  const PersonalProjects({super.key});
+class PersonalProjectsMobile extends StatefulWidget {
+  const PersonalProjectsMobile({Key? key}) : super(key: key);
 
   @override
-  State<PersonalProjects> createState() => _PersonalProjectsState();
+  State<PersonalProjectsMobile> createState() => _PersonalProjectsMobileState();
 }
 
-class _PersonalProjectsState extends State<PersonalProjects> {
+class _PersonalProjectsMobileState extends State<PersonalProjectsMobile> {
   final controller = CarouselController();
   int currentPageIndex = 0;
 
@@ -21,7 +21,7 @@ class _PersonalProjectsState extends State<PersonalProjects> {
       alignment: Alignment.center,
       children: [
         Positioned(
-          left: 100,
+          left: 0,
           child: IconButton(
             icon: const Icon(Icons.arrow_back_ios),
             onPressed: () {
@@ -32,7 +32,7 @@ class _PersonalProjectsState extends State<PersonalProjects> {
         CarouselSlider.builder(
           carouselController: controller,
           options: CarouselOptions(
-            aspectRatio: 2.5,
+            aspectRatio: 1,
             enlargeCenterPage: false,
             viewportFraction: 1,
             onPageChanged: (index, reason) {
@@ -41,32 +41,23 @@ class _PersonalProjectsState extends State<PersonalProjects> {
               });
             },
           ),
-          itemCount: (projectPhotoLists.length / 2).round(),
+          itemCount: projectPhotoLists.length,
           itemBuilder: (context, index, realIdx) {
-            final int first = index * 2;
-            final int second = first + 1;
-            return Row(
-              children: [first, second].map((idx) {
-                return Expanded(
-                  flex: 1,
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
-                    child: ProjectWidget(
-                      titleSize: 20,
-                      descriptionSize: 12,
-                      photoList: projectPhotoLists[idx],
-                      title: projectTitle[idx],
-                      description: projectDesc[idx],
-                      url: projectUrl[idx],
-                    ),
-                  ),
-                );
-              }).toList(),
+            return Container(
+              margin: const EdgeInsets.symmetric(horizontal: 10),
+              child: ProjectWidget(
+                titleSize: 18,
+                descriptionSize: 10,
+                photoList: projectPhotoLists[index],
+                title: projectTitle[index],
+                description: projectDesc[index],
+                url: projectUrl[index],
+              ),
             );
           },
         ),
         Positioned(
-          right: 100,
+          right: 0,
           child: IconButton(
             icon: const Icon(Icons.arrow_forward_ios),
             onPressed: () {

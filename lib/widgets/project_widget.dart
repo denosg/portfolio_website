@@ -8,8 +8,12 @@ class ProjectWidget extends StatefulWidget {
   final String title;
   final String description;
   final String url;
+  final double titleSize;
+  final double descriptionSize;
 
   const ProjectWidget({
+    required this.titleSize,
+    required this.descriptionSize,
     required this.photoList,
     required this.title,
     required this.description,
@@ -126,16 +130,16 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                           // title of project
                           Text(
                             widget.title,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                              fontSize: widget.titleSize,
                             ),
                           ),
                           const SizedBox(height: 20),
                           Text(
                             widget.description,
-                            style: const TextStyle(
-                              fontSize: 12,
+                            style: TextStyle(
+                              fontSize: widget.descriptionSize,
                             ),
                           ),
                         ],

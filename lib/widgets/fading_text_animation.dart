@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class FadingTextAnimation extends StatefulWidget {
   final String text;
+  final double fontSize;
 
-  const FadingTextAnimation({required this.text});
+  const FadingTextAnimation({required this.text, required this.fontSize});
 
   @override
   _FadingTextAnimationState createState() => _FadingTextAnimationState();
@@ -46,7 +47,7 @@ class _FadingTextAnimationState extends State<FadingTextAnimation>
           opacity: _animation.value,
           child: Text(
             widget.text,
-            style: const TextStyle(fontSize: 24.0),
+            style: TextStyle(fontSize: widget.fontSize),
             textAlign: TextAlign.center,
           ),
         );

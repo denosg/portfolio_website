@@ -69,7 +69,8 @@ class DesktopBody extends StatelessWidget {
               const SizedBox(height: 35),
               const Center(
                 child: FadingTextAnimation(
-                    text: "Anything is easy if you do what has to be done."),
+                    text: "Anything is easy if you do what has to be done.",
+                    fontSize: 24),
               ),
               const SizedBox(height: 35),
               // about me section
@@ -105,7 +106,7 @@ class DesktopBody extends StatelessWidget {
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
               ),
-              RouletteScreen(),
+              const RouletteScreen(fontSize: 25),
             ],
           ),
         ),
