@@ -4,6 +4,7 @@ import 'package:portfolio_website/app_bar_section/app_button.dart';
 import 'package:portfolio_website/widgets/about_widget.dart';
 import 'package:portfolio_website/widgets/fading_text_animation.dart';
 import 'package:portfolio_website/widgets/personal_projects_widget.dart';
+import 'package:portfolio_website/widgets/roulette.dart';
 import '/widgets/info_widget.dart';
 
 class DesktopBody extends StatelessWidget {
@@ -95,6 +96,16 @@ class DesktopBody extends StatelessWidget {
                 height: 300,
                 child: PersonalProjects(key: projectsKey),
               ),
+              const SizedBox(height: 35),
+              // ROULETTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+              const Padding(
+                padding: EdgeInsets.only(left: 50),
+                child: Text(
+                  'Something cool',
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                ),
+              ),
+              RouletteScreen(),
             ],
           ),
         ),
