@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppButton extends StatelessWidget {
-  final Function? scrollTo;
+  final VoidCallback scrollTo;
   final String text;
 
   AppButton({required this.scrollTo, required this.text});
@@ -9,9 +9,10 @@ class AppButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () => scrollTo,
+      onPressed: scrollTo,
       child: Text(text,
-          style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 20)),
+          style: const TextStyle(
+              fontWeight: FontWeight.w900, fontSize: 20, color: Colors.black)),
     );
   }
 }

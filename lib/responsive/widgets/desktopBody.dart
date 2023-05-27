@@ -7,6 +7,10 @@ import 'package:portfolio_website/widgets/personal_projects_widget.dart';
 import '/widgets/info_widget.dart';
 
 class DesktopBody extends StatelessWidget {
+  var homeKey = GlobalKey();
+  var aboutKey = GlobalKey();
+  var projectsKey = GlobalKey();
+
   void downloadResume() {
     const resumePath = 'assets/resume.pdf';
     final anchorElement = html.AnchorElement(href: resumePath);
@@ -14,14 +18,19 @@ class DesktopBody extends StatelessWidget {
     anchorElement.click();
   }
 
+  void scrollTo(GlobalKey key) {
+    Scrollable.ensureVisible(key.currentContext!,
+        duration: const Duration(seconds: 1));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          AppButton(scrollTo: null, text: 'Home'),
-          AppButton(scrollTo: null, text: 'About'),
-          AppButton(scrollTo: null, text: 'Projects'),
+          AppButton(scrollTo: () => scrollTo(homeKey), text: 'Home'),
+          AppButton(scrollTo: () => scrollTo(aboutKey), text: 'About'),
+          AppButton(scrollTo: () => scrollTo(projectsKey), text: 'Projects'),
           TextButton(
             onPressed: downloadResume,
             child: const Text('Resume',
@@ -42,7 +51,7 @@ class DesktopBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   // info column
-                  InfoWidget(),
+                  InfoWidget(key: homeKey),
                   // Image with me
                   SizedBox(
                     width: 200,
@@ -71,7 +80,7 @@ class DesktopBody extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 15),
-              AboutWidget(),
+              AboutWidget(key: aboutKey),
               const SizedBox(height: 35),
               // personal projects section
               const Padding(
@@ -84,7 +93,7 @@ class DesktopBody extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 height: 300,
-                child: PersonalProjects(),
+                child: PersonalProjects(key: projectsKey),
               ),
             ],
           ),

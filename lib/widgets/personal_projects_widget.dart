@@ -5,6 +5,8 @@ import 'package:portfolio_website/providers/photo_list.dart';
 import 'package:portfolio_website/widgets/project_widget.dart';
 
 class PersonalProjects extends StatefulWidget {
+  const PersonalProjects({super.key});
+
   @override
   State<PersonalProjects> createState() => _PersonalProjectsState();
 }
