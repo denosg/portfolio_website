@@ -3,8 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 import './homepage.dart';
 
+//TODO: Add contact form
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
