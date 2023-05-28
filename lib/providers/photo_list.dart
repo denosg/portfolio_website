@@ -1,9 +1,9 @@
 //Beyond First Impressions data ->
 final List<String> beyondFirstList = [
-  "images/beyondFirstImpressionsImg/1.png",
-  "images/beyondFirstImpressionsImg/2.png",
-  "images/beyondFirstImpressionsImg/3.png",
-  "images/beyondFirstImpressionsImg/4.png",
+  "https://i.ibb.co/McbXmW6/1.png",
+  "https://i.ibb.co/DL3W07y/2.png",
+  "https://i.ibb.co/d0HQcNP/3.png",
+  "https://i.ibb.co/93vsYq3/4.png",
 ];
 
 const String titleBeyond = "Beyond First Impressions";
@@ -16,10 +16,10 @@ const String urlBeyond =
 
 //Calculator Consum data ->
 final List<String> calcSumList = [
-  "images/calcSumImg/1.png",
-  "images/calcSumImg/2.png",
-  "images/calcSumImg/3.png",
-  "images/calcSumImg/4.png",
+  "https://i.ibb.co/hdwjn6V/1.png",
+  "https://i.ibb.co/Rg0YhZw/2.png",
+  "https://i.ibb.co/MMqz0nY/3.png",
+  "https://i.ibb.co/YBJdZMP/4.png",
 ];
 
 const String titleCalc = "Calculator Consum";
@@ -31,11 +31,11 @@ const String urlCalc = "https://github.com/denosg/calculator_consum_flutter";
 
 //Fake Location data ->
 final List<String> fakeLocList = [
-  "images/fakeLocationImg/1.png",
-  "images/fakeLocationImg/2.png",
-  "images/fakeLocationImg/3.png",
-  "images/fakeLocationImg/4.png",
-  "images/fakeLocationImg/5.png",
+  "https://i.ibb.co/fq1xVL9/1.png",
+  "https://i.ibb.co/PxQXMkc/2.png",
+  "https://i.ibb.co/3zFRy85/3.png",
+  "https://i.ibb.co/X4VvGtv/4.png",
+  "https://i.ibb.co/4JxbWk6/5.png",
 ];
 
 const String titleFakeLoc = "Fake Location";
@@ -47,11 +47,11 @@ const String urlFakeLoc = "https://github.com/denosg/Fake-Location";
 
 //QuestRealm data ->
 final List<String> questRealmList = [
-  "images/questRealmImg/1.png",
-  "images/questRealmImg/2.png",
-  "images/questRealmImg/3.png",
-  "images/questRealmImg/4.png",
-  "images/questRealmImg/5.png",
+  "https://i.ibb.co/mCz85rt/1.png",
+  "https://i.ibb.co/frGWRSj/2.png",
+  "https://i.ibb.co/ncjSxVS/3.png",
+  "https://i.ibb.co/HHY7KNF/4.png",
+  "https://i.ibb.co/svmkKgm/5.png",
 ];
 
 const String titleQuest = "QuestRealm";

@@ -89,7 +89,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                                 padding: const EdgeInsets.all(15),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(15),
-                                  child: Image.asset(
+                                  child: Image.network(
                                     widget.photoList[hoveredIndex],
                                     fit: BoxFit.cover,
                                   ),
