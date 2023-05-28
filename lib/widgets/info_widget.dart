@@ -15,7 +15,8 @@ class InfoWidget extends StatelessWidget {
             const Text("Welcome to my portfolio!",
                 style: TextStyle(fontSize: 40)),
             const SizedBox(width: 5),
-            Image.asset('hello_hand_emoji_web.webp', width: 30, height: 30),
+            Image.network('https://i.ibb.co/tMcyKSG/hello-hand-emoji-web.webp',
+                width: 30, height: 30),
           ],
         ),
         const SizedBox(height: 20),
@@ -50,7 +51,8 @@ class InfoWidget extends StatelessWidget {
                       html.window.open(
                           "https://www.facebook.com/costelasdenis/", "_blank");
                     },
-                    icon: Image.asset('facebook_blackWeb.webp')),
+                    icon: Image.network(
+                        'https://i.ibb.co/c3xmLvF/facebook-black-Web.webp')),
               ),
               SizedBox(
                 width: 60,
@@ -59,7 +61,8 @@ class InfoWidget extends StatelessWidget {
                     onPressed: () {
                       html.window.open("https://github.com/denosg", "_blank");
                     },
-                    icon: Image.asset('githubWeb.webp')),
+                    icon: Image.network(
+                        'https://i.ibb.co/478nzgJ/github-Web.webp')),
               ),
               SizedBox(
                 width: 60,
@@ -70,7 +73,8 @@ class InfoWidget extends StatelessWidget {
                           "https://www.linkedin.com/in/costelas-denis-3b1042236/",
                           "_blank");
                     },
-                    icon: Image.asset('linkedinWeb.webp')),
+                    icon: Image.network(
+                        'https://i.ibb.co/WWSR3Kx/linkedin-Web.webp')),
               ),
             ],
           ),

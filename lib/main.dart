@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import './homepage.dart';
 
 //TODO: Add contact form
-//TODO: Change all images to use for web...
 void main() {
   runApp(const MyApp());
 }

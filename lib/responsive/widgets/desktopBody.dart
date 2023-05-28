@@ -59,8 +59,8 @@ class DesktopBody extends StatelessWidget {
                     height: 200,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(50),
-                      child: Image.asset(
-                        'pozaCuMnLow.jpg',
+                      child: Image.network(
+                        'https://i.ibb.co/Hhnmr8X/poza-Cu-Mn-Low-WEB.webp',
                       ),
                     ),
                   ),
