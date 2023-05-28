@@ -36,13 +36,13 @@ class InfoWidget extends StatelessWidget {
         ),
         // social links
         const SizedBox(height: 10),
-        Container(
+        SizedBox(
           width: 300,
           // color: Colors.red,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
+              SizedBox(
                 width: 60,
                 height: 60,
                 child: IconButton(

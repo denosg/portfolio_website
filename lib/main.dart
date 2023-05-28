@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:google_fonts/google_fonts.dart';
 
 import './homepage.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
           secondary: Colors.white,
         ),
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
