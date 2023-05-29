@@ -31,8 +31,10 @@ class MobileBody extends StatelessWidget {
                   const Text("Welcome to my portfolio!",
                       style: TextStyle(fontSize: 20)),
                   const SizedBox(width: 5),
-                  Image.asset('hello_hand_emoji_web.webp',
-                      width: 30, height: 30),
+                  Image.network(
+                      'https://i.ibb.co/tMcyKSG/hello-hand-emoji-web.webp',
+                      width: 30,
+                      height: 30),
                 ],
               ),
               const SizedBox(height: 20),
@@ -47,8 +49,8 @@ class MobileBody extends StatelessWidget {
                     height: 100,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(50),
-                      child: Image.asset(
-                        'pozaCuMnLow.jpg',
+                      child: Image.network(
+                        'https://i.ibb.co/Hhnmr8X/poza-Cu-Mn-Low-WEB.webp',
                       ),
                     ),
                   ),
