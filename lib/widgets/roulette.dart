@@ -9,10 +9,10 @@ class MyRoulette extends StatelessWidget {
   final double fontSize;
 
   const MyRoulette({
-    super.key,
+    Key? key,
     required this.controller,
     required this.fontSize,
-  });
+  }) : super(key: key);
 
   final RouletteController controller;
 

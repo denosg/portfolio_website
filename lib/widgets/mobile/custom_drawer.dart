@@ -29,13 +29,8 @@ class CustomDrawer extends StatelessWidget {
       child: Column(
         children: [
           AppBar(
-            title: const Text(
-              'Hello !',
-              style: TextStyle(color: Colors.black),
-            ),
+            title: const Text('Hello !'),
             automaticallyImplyLeading: false,
-            backgroundColor: Colors.transparent,
-            elevation: 0,
           ),
           const SizedBox(height: 8),
           ListTile(

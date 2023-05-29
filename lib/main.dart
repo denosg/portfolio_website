@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import './homepage.dart';
 
 //TODO: Add contact form
-// TODO: fix roullete on mobile screen
 void main() {
   runApp(const MyApp());
 }
