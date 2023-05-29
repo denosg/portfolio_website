@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import './homepage.dart';
 
 //TODO: Add contact form
-// TODO: Load PDF resume from web (make a site host your pdf)
 void main() {
   runApp(const MyApp());
 }
