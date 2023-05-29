@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:roulette/roulette.dart';
+import 'dart:html' as html;
 
 import './arrow_roulette.dart';
 
@@ -102,6 +103,10 @@ class _RouletteScreenState extends State<RouletteScreen>
           ElevatedButton(
               onPressed: () async {
                 await _controller.rollTo(0, offset: _random.nextDouble());
+                await Future.delayed(const Duration(milliseconds: 700));
+                html.window.open(
+                    "https://github.com/denosg/resume-host/blob/main/CV%20Denis%20Costelas.pdf",
+                    "_blank");
               },
               child: const Text("LET'S GET READY TO RUMBLEEE")),
         ],
