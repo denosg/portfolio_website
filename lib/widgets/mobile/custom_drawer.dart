@@ -13,10 +13,9 @@ class CustomDrawer extends StatelessWidget {
       required this.projectsKey});
 
   void downloadResume() {
-    const resumePath = 'assets/resume.pdf';
-    final anchorElement = html.AnchorElement(href: resumePath);
-    anchorElement.download = 'resume.pdf';
-    anchorElement.click();
+    html.window.open(
+        "https://github.com/denosg/resume-host/blob/main/CV%20Denis%20Costelas.pdf",
+        "_blank");
   }
 
   void scrollTo(GlobalKey key) {
