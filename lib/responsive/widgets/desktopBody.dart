@@ -8,9 +8,9 @@ import 'package:portfolio_website/widgets/roulette.dart';
 import '/widgets/info_widget.dart';
 
 class DesktopBody extends StatelessWidget {
-  var homeKey = GlobalKey();
-  var aboutKey = GlobalKey();
-  var projectsKey = GlobalKey();
+  final homeKey = GlobalKey();
+  final aboutKey = GlobalKey();
+  final projectsKey = GlobalKey();
 
   void downloadResume() {
     html.window.open(

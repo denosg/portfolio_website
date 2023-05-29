@@ -7,15 +7,17 @@ import '../../widgets/roulette.dart';
 import '/widgets/mobile/custom_drawer.dart';
 
 class MobileBody extends StatelessWidget {
-  var homeKey = GlobalKey();
-  var aboutKey = GlobalKey();
-  var projectsKey = GlobalKey();
+  final homeKey = GlobalKey();
+  final aboutKey = GlobalKey();
+  final projectsKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Welcome !"),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        iconTheme: const IconThemeData(color: Colors.black),
       ),
       drawer: CustomDrawer(
           homeKey: homeKey, aboutKey: aboutKey, projectsKey: projectsKey),
@@ -74,7 +76,6 @@ class MobileBody extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 15),
-              //TODO: make it so the user can press to load or not
               AboutWidget(key: aboutKey),
               const SizedBox(height: 35),
               // personal projects section
