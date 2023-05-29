@@ -9,11 +9,16 @@ class AppButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: scrollTo,
-      child: Text(text,
-          style: const TextStyle(
-              fontWeight: FontWeight.w900, fontSize: 20, color: Colors.black)),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: TextButton(
+        onPressed: scrollTo,
+        child: Text(text,
+            style: const TextStyle(
+                fontWeight: FontWeight.w900,
+                fontSize: 20,
+                color: Colors.black)),
+      ),
     );
   }
 }

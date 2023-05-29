@@ -29,19 +29,26 @@ class DesktopBody extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        actions: [
-          AppButton(scrollTo: () => scrollTo(homeKey), text: 'Home'),
-          AppButton(scrollTo: () => scrollTo(aboutKey), text: 'About'),
-          AppButton(scrollTo: () => scrollTo(projectsKey), text: 'Projects'),
-          TextButton(
-            onPressed: downloadResume,
-            child: const Text('Resume',
-                style: TextStyle(
-                    fontWeight: FontWeight.w900,
-                    fontSize: 20,
-                    color: Colors.black)),
-          ),
-        ],
+        centerTitle: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AppButton(scrollTo: () => scrollTo(homeKey), text: 'Home'),
+            AppButton(scrollTo: () => scrollTo(aboutKey), text: 'About'),
+            AppButton(scrollTo: () => scrollTo(projectsKey), text: 'Projects'),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: TextButton(
+                onPressed: downloadResume,
+                child: const Text('Resume',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w900,
+                        fontSize: 20,
+                        color: Colors.black)),
+              ),
+            ),
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
