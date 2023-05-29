@@ -27,6 +27,8 @@ class DesktopBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         actions: [
           AppButton(scrollTo: () => scrollTo(homeKey), text: 'Home'),
           AppButton(scrollTo: () => scrollTo(aboutKey), text: 'About'),
