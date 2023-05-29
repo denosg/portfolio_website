@@ -75,7 +75,7 @@ class _RouletteScreenState extends State<RouletteScreen>
     final group = RouletteGroup([
       const RouletteUnit.text(
         "da",
-        color: Color.fromRGBO(96, 125, 139, 1),
+        color: Colors.blue,
         weight: 0.5,
       ),
       const RouletteUnit.text(
