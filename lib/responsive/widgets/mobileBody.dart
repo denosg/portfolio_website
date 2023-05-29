@@ -15,7 +15,9 @@ class MobileBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Welcome !"),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: const IconThemeData(color: Colors.black),
       ),
       drawer: CustomDrawer(
           homeKey: homeKey, aboutKey: aboutKey, projectsKey: projectsKey),
