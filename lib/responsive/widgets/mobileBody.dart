@@ -26,16 +26,19 @@ class MobileBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                children: [
-                  const Text("Welcome to my portfolio!",
-                      style: TextStyle(fontSize: 20)),
-                  const SizedBox(width: 5),
-                  Image.network(
-                      'https://i.ibb.co/tMcyKSG/hello-hand-emoji-web.webp',
-                      width: 30,
-                      height: 30),
-                ],
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text("Welcome to my portfolio!",
+                        style: TextStyle(fontSize: 20)),
+                    const SizedBox(width: 5),
+                    Image.network(
+                        'https://i.ibb.co/tMcyKSG/hello-hand-emoji-web.webp',
+                        width: 30,
+                        height: 30),
+                  ],
+                ),
               ),
               const SizedBox(height: 20),
               Row(
