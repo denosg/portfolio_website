@@ -22,7 +22,8 @@ class SocialLinks extends StatelessWidget {
                     html.window.open(
                         "https://www.facebook.com/costelasdenis/", "_blank");
                   },
-                  icon: Image.asset('facebook_blackWeb.webp')),
+                  icon: Image.network(
+                      'https://i.ibb.co/c3xmLvF/facebook-black-Web.webp')),
             ),
             SizedBox(
               width: 50,
@@ -31,7 +32,8 @@ class SocialLinks extends StatelessWidget {
                   onPressed: () {
                     html.window.open("https://github.com/denosg", "_blank");
                   },
-                  icon: Image.asset('githubWeb.webp')),
+                  icon: Image.network(
+                      'https://i.ibb.co/478nzgJ/github-Web.webp')),
             ),
             SizedBox(
               width: 50,
@@ -42,7 +44,8 @@ class SocialLinks extends StatelessWidget {
                         "https://www.linkedin.com/in/costelas-denis-3b1042236/",
                         "_blank");
                   },
-                  icon: Image.asset('linkedinWeb.webp')),
+                  icon: Image.network(
+                      'https://i.ibb.co/WWSR3Kx/linkedin-Web.webp')),
             ),
           ],
         ),
