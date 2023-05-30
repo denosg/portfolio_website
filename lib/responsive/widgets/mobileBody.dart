@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/widgets/mobile/info_widget_mobile.dart';
 import 'package:portfolio_website/widgets/mobile/personal_projects_mobile.dart';
+import 'package:portfolio_website/widgets/mobile/social_links.dart';
 import '../../widgets/about_widget.dart';
 import '../../widgets/fading_text_animation.dart';
 import '../../widgets/roulette.dart';
@@ -100,6 +101,9 @@ class MobileBody extends StatelessWidget {
                 ),
               ),
               const RouletteScreen(fontSize: 18),
+              const SizedBox(height: 20),
+              // social links
+              const SocialLinks(),
             ],
           ),
         ),
