@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:html' as html;
 
 class InfoWidgetMobile extends StatelessWidget {
   const InfoWidgetMobile({super.key});
