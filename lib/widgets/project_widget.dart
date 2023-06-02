@@ -63,7 +63,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
             html.window.open(widget.url, "_blank");
           },
           child: Padding(
-            padding: const EdgeInsets.only(left: 22),
+            padding: const EdgeInsets.symmetric(horizontal: 11),
             child: Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),

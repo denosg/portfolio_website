@@ -22,7 +22,7 @@ class MyRoulette extends StatelessWidget {
     return Column(
       children: [
         Text(
-          "Sa colaboram cu Denis ?",
+          "Should we collaborate with Denis ?",
           style: TextStyle(fontSize: fontSize),
         ),
         const SizedBox(height: 10),
@@ -74,12 +74,12 @@ class _RouletteScreenState extends State<RouletteScreen>
     // Initialize the controller
     final group = RouletteGroup([
       const RouletteUnit.text(
-        "da",
+        "yes",
         color: Colors.blue,
         weight: 0.5,
       ),
       const RouletteUnit.text(
-        "nu",
+        "no",
         color: Colors.orange,
         weight: 0.5,
       ),
