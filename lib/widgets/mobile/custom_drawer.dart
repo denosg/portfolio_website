@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:html' as html;
+import 'package:url_launcher/url_launcher.dart' as url;
 
 class CustomDrawer extends StatelessWidget {
   final GlobalKey homeKey;
@@ -12,10 +12,15 @@ class CustomDrawer extends StatelessWidget {
       required this.aboutKey,
       required this.projectsKey});
 
-  void downloadResume() {
-    html.window.open(
-        "https://github.com/denosg/resume-host/blob/main/CV%20Denis%20Costelas.pdf",
-        "_blank");
+  void downloadResume() async {
+    final resumeUrl = Uri.parse(
+        'https://github.com/denosg/resume-host/blob/main/CV%20Denis%20Costelas.pdf');
+
+    if (await url.canLaunchUrl(resumeUrl)) {
+      await url.launchUrl(resumeUrl);
+    } else {
+      throw 'Could not launch $resumeUrl';
+    }
   }
 
   void scrollTo(GlobalKey key) {

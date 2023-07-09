@@ -4,9 +4,11 @@ class FadingTextAnimation extends StatefulWidget {
   final String text;
   final double fontSize;
 
-  const FadingTextAnimation({super.key, required this.text, required this.fontSize});
+  const FadingTextAnimation(
+      {super.key, required this.text, required this.fontSize});
 
   @override
+  // ignore: library_private_types_in_public_api
   _FadingTextAnimationState createState() => _FadingTextAnimationState();
 }
 

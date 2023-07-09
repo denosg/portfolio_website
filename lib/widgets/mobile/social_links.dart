@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
-import 'dart:html' as html;
+import 'package:url_launcher/url_launcher.dart' as url;
 
 class SocialLinks extends StatelessWidget {
   const SocialLinks({super.key});
+
+  void openLink(String stringUrl) async {
+    final openUrl = Uri.parse(stringUrl);
+
+    if (await url.canLaunchUrl(openUrl)) {
+      await url.launchUrl(openUrl);
+    } else {
+      throw 'Could not launch $openUrl';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +29,7 @@ class SocialLinks extends StatelessWidget {
               height: 50,
               child: IconButton(
                   onPressed: () {
-                    html.window.open(
-                        "https://www.facebook.com/costelasdenis/", "_blank");
+                    openLink("https://www.facebook.com/costelasdenis/");
                   },
                   icon: Image.network(
                       'https://i.ibb.co/c3xmLvF/facebook-black-Web.webp')),
@@ -30,7 +39,7 @@ class SocialLinks extends StatelessWidget {
               height: 50,
               child: IconButton(
                   onPressed: () {
-                    html.window.open("https://github.com/denosg", "_blank");
+                    openLink("https://github.com/denosg");
                   },
                   icon: Image.network(
                       'https://i.ibb.co/478nzgJ/github-Web.webp')),
@@ -40,9 +49,8 @@ class SocialLinks extends StatelessWidget {
               height: 50,
               child: IconButton(
                   onPressed: () {
-                    html.window.open(
-                        "https://www.linkedin.com/in/costelas-denis-3b1042236/",
-                        "_blank");
+                    openLink(
+                        "https://www.linkedin.com/in/costelas-denis-3b1042236/");
                   },
                   icon: Image.network(
                       'https://i.ibb.co/WWSR3Kx/linkedin-Web.webp')),

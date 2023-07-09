@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'dart:html' as html;
 
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart' as url;
 
 class ProjectWidget extends StatefulWidget {
   final List<String> photoList;
@@ -11,7 +11,8 @@ class ProjectWidget extends StatefulWidget {
   final double titleSize;
   final double descriptionSize;
 
-  const ProjectWidget({super.key, 
+  const ProjectWidget({
+    super.key,
     required this.titleSize,
     required this.descriptionSize,
     required this.photoList,
@@ -25,6 +26,16 @@ class ProjectWidget extends StatefulWidget {
 }
 
 class _ProjectWidgetState extends State<ProjectWidget> {
+  void openLink(String stringUrl) async {
+    final openUrl = Uri.parse(stringUrl);
+
+    if (await url.canLaunchUrl(openUrl)) {
+      await url.launchUrl(openUrl);
+    } else {
+      throw 'Could not launch $openUrl';
+    }
+  }
+
   int hoveredIndex = 0;
   bool isHovered = false;
   Timer? timer;
@@ -60,7 +71,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
         cursor: SystemMouseCursors.click,
         child: GestureDetector(
           onTap: () {
-            html.window.open(widget.url, "_blank");
+            openLink(widget.url);
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 11),

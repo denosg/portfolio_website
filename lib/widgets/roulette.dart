@@ -1,8 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:roulette/roulette.dart';
-import 'dart:html' as html;
+import 'package:url_launcher/url_launcher.dart' as url;
 
 import './arrow_roulette.dart';
 
@@ -88,6 +89,16 @@ class _RouletteScreenState extends State<RouletteScreen>
     super.initState();
   }
 
+  void openLink(String stringUrl) async {
+    final openUrl = Uri.parse(stringUrl);
+
+    if (await url.canLaunchUrl(openUrl)) {
+      await url.launchUrl(openUrl);
+    } else {
+      throw 'Could not launch $openUrl';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -104,9 +115,8 @@ class _RouletteScreenState extends State<RouletteScreen>
               onPressed: () async {
                 await _controller.rollTo(0, offset: _random.nextDouble());
                 await Future.delayed(const Duration(milliseconds: 700));
-                html.window.open(
-                    "https://github.com/denosg/resume-host/blob/main/CV%20Denis%20Costelas.pdf",
-                    "_blank");
+                openLink(
+                    "https://github.com/denosg/resume-host/blob/main/CV%20Denis%20Costelas.pdf");
               },
               child: const Text("LET'S GET READY TO RUMBLEEE")),
         ],

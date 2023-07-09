@@ -1,5 +1,6 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
-import 'dart:html' as html;
+import 'package:url_launcher/url_launcher.dart' as url;
 import 'package:portfolio_website/app_bar_section/app_button.dart';
 import 'package:portfolio_website/widgets/about_widget.dart';
 import 'package:portfolio_website/widgets/fading_text_animation.dart';
@@ -7,6 +8,7 @@ import 'package:portfolio_website/widgets/personal_projects_widget.dart';
 import 'package:portfolio_website/widgets/roulette.dart';
 import '/widgets/info_widget.dart';
 
+// ignore: must_be_immutable
 class DesktopBody extends StatelessWidget {
   var homeKey = GlobalKey();
   var aboutKey = GlobalKey();
@@ -14,10 +16,15 @@ class DesktopBody extends StatelessWidget {
 
   DesktopBody({super.key});
 
-  void downloadResume() {
-    html.window.open(
-        "https://github.com/denosg/resume-host/blob/main/CV%20Denis%20Costelas.pdf",
-        "_blank");
+  void downloadResume() async {
+    final resumeUrl = Uri.parse(
+        'https://github.com/denosg/resume-host/blob/main/CV%20Denis%20Costelas.pdf');
+
+    if (await url.canLaunchUrl(resumeUrl)) {
+      await url.launchUrl(resumeUrl);
+    } else {
+      throw 'Could not launch $resumeUrl';
+    }
   }
 
   void scrollTo(GlobalKey key) {
