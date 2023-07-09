@@ -46,7 +46,7 @@ class MyRoulette extends StatelessWidget {
                 ),
               ),
             ),
-            ArrowItem(),
+            const ArrowItem(),
           ],
         ),
       ],

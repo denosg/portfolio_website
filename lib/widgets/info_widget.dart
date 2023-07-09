@@ -29,8 +29,8 @@ class InfoWidget extends StatelessWidget {
               fontWeight: FontWeight.bold,
             )),
         const SizedBox(height: 3),
-        Row(
-          children: const [
+        const Row(
+          children: [
             Icon(Icons.arrow_right_rounded, color: Colors.deepPurple),
             Text("Flutter Developer")
           ],

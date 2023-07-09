@@ -12,6 +12,8 @@ class MobileBody extends StatelessWidget {
   final aboutKey = GlobalKey();
   final projectsKey = GlobalKey();
 
+  MobileBody({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

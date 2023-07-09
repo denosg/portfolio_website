@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class BreathingTextAnimation extends StatefulWidget {
   final String text;
 
-  const BreathingTextAnimation({required this.text});
+  const BreathingTextAnimation({super.key, required this.text});
 
   @override
   _BreathingTextAnimationState createState() => _BreathingTextAnimationState();

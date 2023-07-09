@@ -11,7 +11,7 @@ class ProjectWidget extends StatefulWidget {
   final double titleSize;
   final double descriptionSize;
 
-  const ProjectWidget({
+  const ProjectWidget({super.key, 
     required this.titleSize,
     required this.descriptionSize,
     required this.photoList,

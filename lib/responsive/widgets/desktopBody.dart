@@ -12,6 +12,8 @@ class DesktopBody extends StatelessWidget {
   var aboutKey = GlobalKey();
   var projectsKey = GlobalKey();
 
+  DesktopBody({super.key});
+
   void downloadResume() {
     html.window.open(
         "https://github.com/denosg/resume-host/blob/main/CV%20Denis%20Costelas.pdf",
