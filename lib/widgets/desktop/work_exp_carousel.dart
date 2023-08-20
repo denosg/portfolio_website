@@ -59,7 +59,7 @@ class _WorkExpCarouselState extends State<WorkExpCarousel> {
                     appImg: workExp.appImage);
               },
               options: CarouselOptions(
-                aspectRatio: 2.8,
+                height: deviceSize.height * 0.57,
                 enlargeCenterPage: false,
                 viewportFraction: 1,
                 onPageChanged: (index, reason) {
