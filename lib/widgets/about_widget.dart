@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 
 class AboutWidget extends StatelessWidget {
-  const AboutWidget({super.key});
+  final bool isDesk;
+  const AboutWidget({super.key, required this.isDesk});
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 40),
+        padding: const EdgeInsets.symmetric(horizontal: 40),
         child: Text(
-          " I'm a mobile app enthusiast who's always had a passion for developing apps. I started with Android app development, starting with simple button interfaces with a good backend, before progressing to using dependencies and web scraping to enhance the functionality of my apps. As I continued on this journey, I became fascinated with cross-platform mobile development, which led me to learn the Flutter SDK. With Flutter, I've been able to create stunning UIs for a range of apps, from simple expense planners to full-on shops. I've also been fortunate enough to participate in several competitions, earning 1st Place County Phase TIC Olympiad award. Despite my achievements, I'm still learning a lot about cross-platform mobile development, and the journey is an ongoing adventure as I discover new ways to build beautiful and functional apps. I can't wait to see where this passion takes me next!",
-          style: TextStyle(fontSize: 17),
+          isDesk ? deskText : mobText,
+          style: const TextStyle(fontSize: 17),
         ),
       ),
     );
   }
 }
+
+const String deskText =
+    "  Through a passion for programming that began in middle school, I have pursued academic excellence and used my skills to help others. My curiosity was first sparked when I modified a video game as a young teen. Since then, I have created mobile apps to connect generations, presented science projects to my local community, and achieved top honors in computing competitions. While studying computer engineering at university, I continue to learn new skills like cryptography and machine learning. I love bringing ideas to life through code. Whether crafting algorithms or building clean user interfaces, I pour my focus into perfecting every detail. I take pride in using my programming talents, not just for personal projects, but to create technology that gives back. Though my path has had twists and turns, each experience has expanded my perspective and strengthened my resolve to keep learning. I look forward to continuing this journey and using my passion for programming to make a positive impact ! <3";
+const String mobText =
+    "  My passion for programming began in middle school when I modified a video game. Since then, I have created helpful apps, presented science projects locally, and won computing competitions while studying computer engineering. I love bringing ideas to life through code. My path has expanded my perspective and strengthened my resolve to keep learning. I look forward to making a positive impact through my programming passion ! <3";
