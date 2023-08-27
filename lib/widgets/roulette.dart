@@ -118,7 +118,7 @@ class _RouletteScreenState extends State<RouletteScreen>
                 openLink(
                     "https://github.com/denosg/resume-host/blob/main/CV%20Denis%20Costelas.pdf");
               },
-              child: const Text("LET'S GET READY TO RUMBLEEE")),
+              child: const Text("SPIN THE WHEEL !")),
         ],
       ),
     );
