@@ -3,7 +3,7 @@ import 'package:portfolio_website/widgets/desktop/tasks_widget.dart';
 import 'package:url_launcher/url_launcher.dart' as url;
 
 class WorkExperience extends StatelessWidget {
-  final String urlForApp;
+  final String? urlForApp;
   final String companyAndApp;
   final String timeSpent;
   final List<String> tasks;
@@ -70,7 +70,7 @@ class WorkExperience extends StatelessWidget {
               MouseRegion(
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
-                  onTap: () => openLink(urlForApp),
+                  onTap: urlForApp == null ? null : () => openLink(urlForApp!),
                   child: Padding(
                     padding: const EdgeInsets.all(15),
                     child: ClipRRect(

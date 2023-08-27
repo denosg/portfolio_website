@@ -21,7 +21,7 @@ class _WorkExpCarouselState extends State<WorkExpCarousel> {
     WorkExp(
         companyNameAndApp: "Monad Systems - Hupu app",
         workTime: "july - present",
-        linkForApp: "https://apartinator.ro/",
+        linkForApp: null,
         tasksIveDone: tasksIveDoneHupu,
         appImage: hupuAppImg),
   ];
