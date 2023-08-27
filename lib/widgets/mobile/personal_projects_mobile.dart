@@ -18,11 +18,13 @@ class _PersonalProjectsMobileState extends State<PersonalProjectsMobile> {
 
   @override
   Widget build(BuildContext context) {
+    final deviceSize = MediaQuery.of(context).size;
+
     return Stack(
       alignment: Alignment.center,
       children: [
         Positioned(
-          left: 0,
+          left: deviceSize.width * 0.05,
           child: IconButton(
             icon: const Icon(Icons.arrow_back_ios),
             onPressed: () {
@@ -58,7 +60,7 @@ class _PersonalProjectsMobileState extends State<PersonalProjectsMobile> {
           },
         ),
         Positioned(
-          right: 0,
+          right: deviceSize.width * 0.05,
           child: IconButton(
             icon: const Icon(Icons.arrow_forward_ios),
             onPressed: () {
