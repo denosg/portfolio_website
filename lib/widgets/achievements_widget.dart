@@ -54,7 +54,7 @@ class _AchievementsWidgetState extends State<AchievementsWidget> {
                   child: AchievementWidget(
                     isForDesk: widget.isForDesk,
                     title: achievement.title,
-                    photoUrl: achievement.photoUrl,
+                    photoUrls: achievement.photoUrl,
                     url: achievement.url,
                   ),
                 );
@@ -95,7 +95,7 @@ List<Achievement> achievementsDesk = [
     title: "1st Place County Phase TIC Olympiad",
     url:
         "https://drive.google.com/file/d/1_4_mLNrou-OkadUSMoVLP3WdX4GkMowy/view?usp=sharing",
-    photoUrl: ticOlympiad,
+    photoUrl: [ticOlympiad],
   ),
   Achievement(
     title:
@@ -111,13 +111,13 @@ List<Achievement> achievementsPhone = [
     title: "1st Place County Phase TIC Olympiad",
     url:
         "https://drive.google.com/file/d/1_4_mLNrou-OkadUSMoVLP3WdX4GkMowy/view?usp=sharing",
-    photoUrl: ticOlympiad,
+    photoUrl: [ticOlympiad],
   ),
   Achievement(
     title:
         "1st Place in County Hackathon for Take Care App. Advanced to semifinals in Bucharest.",
     url:
         "https://m.ebihoreanul.ro/stiri/trei-echipe-de-la-universitatea-din-oradea-remarcate-la-un-concurs-important-de-inovatie-ce-aplicatii-au-propus-177865.html?fbclid=IwAR22iI0b9CfiKA1mWRGf6szdgio1QjQEZL0jU3tCXa0fpZ3CNY_dITouQAw",
-    photoUrl: hackathonTakeCare,
+    photoUrl: [hackathonTakeCare[0]],
   ),
 ];

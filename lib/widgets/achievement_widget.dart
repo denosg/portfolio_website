@@ -4,13 +4,13 @@ import 'package:url_launcher/url_launcher.dart';
 class AchievementWidget extends StatelessWidget {
   final String title;
   final String url;
-  final String photoUrl;
+  final List<String> photoUrls;
   final bool isForDesk;
   const AchievementWidget(
       {super.key,
       required this.title,
       required this.url,
-      required this.photoUrl,
+      required this.photoUrls,
       required this.isForDesk});
 
   void openLink(String stringUrl) async {
@@ -44,15 +44,24 @@ class AchievementWidget extends StatelessWidget {
           ],
         ),
         SizedBox(height: deviceSize.height * 0.01),
-        Expanded(
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(15),
-            child: Image.network(
-              photoUrl,
-              height:
-                  isForDesk ? deviceSize.height * 0.4 : deviceSize.height * 0.3,
-            ),
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: photoUrls
+              .map(
+                (photoUrl) => Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(15),
+                    child: Image.network(
+                      photoUrl,
+                      height: isForDesk
+                          ? deviceSize.height * 0.4
+                          : deviceSize.height * 0.3,
+                    ),
+                  ),
+                ),
+              )
+              .toList(),
         ),
       ],
     );
