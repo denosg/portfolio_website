@@ -1,7 +1,7 @@
 class WorkExp {
   final String companyNameAndApp;
   final String workTime;
-  final String linkForApp;
+  final String? linkForApp;
   final List<String> tasksIveDone;
   final String appImage;
 
