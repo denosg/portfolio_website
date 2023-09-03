@@ -104,6 +104,25 @@ List<Achievement> achievementsDesk = [
         "https://m.ebihoreanul.ro/stiri/trei-echipe-de-la-universitatea-din-oradea-remarcate-la-un-concurs-important-de-inovatie-ce-aplicatii-au-propus-177865.html?fbclid=IwAR22iI0b9CfiKA1mWRGf6szdgio1QjQEZL0jU3tCXa0fpZ3CNY_dITouQAw",
     photoUrl: hackathonTakeCare,
   ),
+  Achievement(
+    title: "European Computer Driving Licence Certificate",
+    url:
+        "https://drive.google.com/file/d/1vIogytupiaHX4wFcSTvEMJazFmxTT4xx/view?usp=sharing",
+    photoUrl: [certificatECDL],
+  ),
+  Achievement(
+    title:
+        "Leaders for the Third Millennium. In partnership with: Tenaris Silcotub and the British Council",
+    url:
+        "https://drive.google.com/file/d/1XIIeuJ9viUVc-n4Cw2s8YxRB8WJRG5oc/view?usp=sharing",
+    photoUrl: [certificatLM3],
+  ),
+  Achievement(
+    title: "3rd Place County Phase English Olympiad",
+    url:
+        "https://drive.google.com/file/d/1Qrv223dCo-91yVArmOLF8TQSEyls8es6/view?usp=sharing",
+    photoUrl: [englishOlympiad],
+  ),
 ];
 
 List<Achievement> achievementsPhone = [
@@ -119,5 +138,24 @@ List<Achievement> achievementsPhone = [
     url:
         "https://m.ebihoreanul.ro/stiri/trei-echipe-de-la-universitatea-din-oradea-remarcate-la-un-concurs-important-de-inovatie-ce-aplicatii-au-propus-177865.html?fbclid=IwAR22iI0b9CfiKA1mWRGf6szdgio1QjQEZL0jU3tCXa0fpZ3CNY_dITouQAw",
     photoUrl: [hackathonTakeCare[0]],
+  ),
+  Achievement(
+    title: "European Computer Driving Licence Certificate",
+    url:
+        "https://drive.google.com/file/d/1vIogytupiaHX4wFcSTvEMJazFmxTT4xx/view?usp=sharing",
+    photoUrl: [certificatECDL],
+  ),
+  Achievement(
+    title:
+        "Leaders for the Third Millennium. In partnership with: Tenaris Silcotub and the British Council",
+    url:
+        "https://drive.google.com/file/d/1XIIeuJ9viUVc-n4Cw2s8YxRB8WJRG5oc/view?usp=sharing",
+    photoUrl: [certificatLM3],
+  ),
+  Achievement(
+    title: "3rd Place County Phase English Olympiad",
+    url:
+        "https://drive.google.com/file/d/1Qrv223dCo-91yVArmOLF8TQSEyls8es6/view?usp=sharing",
+    photoUrl: [englishOlympiad],
   ),
 ];
