@@ -43,7 +43,8 @@ class _WorkExpCarouselMobState extends State<WorkExpCarouselMob> {
               },
             ),
           ),
-        Center(
+        Padding(
+          padding: const EdgeInsets.only(left: 10),
           child: SizedBox(
             width: deviceSize.width * 0.8,
             child: CarouselSlider.builder(

@@ -7,10 +7,10 @@ class VerticalSkillList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 300,
-      height: 350,
-      child: Center(
+    return Center(
+      child: SizedBox(
+        width: 300,
+        height: 300,
         child: GridView(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),

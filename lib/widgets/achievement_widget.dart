@@ -54,9 +54,8 @@ class AchievementWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15),
                     child: Image.network(
                       photoUrl,
-                      height: isForDesk
-                          ? deviceSize.height * 0.4
-                          : deviceSize.height * 0.3,
+                      width: isForDesk ? null : deviceSize.width * 0.7,
+                      height: isForDesk ? deviceSize.height * 0.4 : null,
                     ),
                   ),
                 ),
