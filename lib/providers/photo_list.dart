@@ -60,3 +60,28 @@ const String descQuest =
     "Quest App, a Flutter and Firebase-based cross-platform mobile application, offers quests, rankings, a daily gift wheel for up to 75 points, user-friendly interface, and high performance through customizable widgets.";
 
 const String urlQuest = "https://github.com/denosg/quest_realm";
+
+//WorkExperience ->
+//MonadSystems -> Hupu
+const String hupuAppImg = "https://i.ibb.co/WVmTP3S/smartmockups-lltjbf8y.jpg";
+// https://i.ibb.co/W32Ly6X/hupu.jpg
+
+//Achievements ->
+const List<String> hackathonTakeCare = [
+  "https://i.ibb.co/6R2bvXs/studenti-aplicatii-020423-03.jpg",
+  "https://i.ibb.co/zrcYsfQ/smartmockups-llkr3ray.jpg",
+];
+const String ticOlympiad =
+    "https://i.ibb.co/KVV08WF/13-Diploma-Premiul-I-Olimpiada-TIC.jpg";
+const String certificatECDL = "https://i.ibb.co/5L6HBCQ/Certificat-ECDL.jpg";
+const String certificatLM3 = "https://i.ibb.co/wcDZnXj/Certificat-LM3.jpg";
+const String englishOlympiad =
+    "https://i.ibb.co/VxsYhSC/Diploma-Olimpiada-Engleza.jpg";
+
+const String androidUrl = "https://i.ibb.co/NnJSys7/android.png";
+const String flutterUrl = "https://i.ibb.co/TvLnYRT/flutter.png";
+const String javaUrl = "https://i.ibb.co/NLdPMyg/java.png";
+const String sqlUrl = "https://i.ibb.co/0tw9Jnj/sql.png";
+const String noSqlUrl = "https://i.ibb.co/pLSkfpg/icons8-nosql-48.png";
+const String dartUrl = "https://i.ibb.co/9ppmNs8/dart.png";
+const String firebaseUrl = "https://i.ibb.co/FgTqqn6/firebase.png";
