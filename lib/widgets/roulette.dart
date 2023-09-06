@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-// ignore: depend_on_referenced_packages
 import 'package:roulette/roulette.dart';
 import 'package:url_launcher/url_launcher.dart' as url;
 
@@ -11,10 +10,10 @@ class MyRoulette extends StatelessWidget {
   final double fontSize;
 
   const MyRoulette({
-    Key? key,
+    super.key,
     required this.controller,
     required this.fontSize,
-  }) : super(key: key);
+  });
 
   final RouletteController controller;
 
