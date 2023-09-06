@@ -1,18 +1,25 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:portfolio_website/widgets/achievements_widget.dart';
+import 'package:portfolio_website/widgets/desktop/horizontal_skill_list.dart';
+import 'package:portfolio_website/widgets/desktop/info_widget.dart';
+import 'package:portfolio_website/widgets/desktop/personal_projects_widget.dart';
+import 'package:portfolio_website/widgets/desktop/work_exp_carousel.dart';
+import 'package:portfolio_website/widgets/footer.dart';
 import 'package:url_launcher/url_launcher.dart' as url;
 import 'package:portfolio_website/app_bar_section/app_button.dart';
 import 'package:portfolio_website/widgets/about_widget.dart';
 import 'package:portfolio_website/widgets/fading_text_animation.dart';
-import 'package:portfolio_website/widgets/personal_projects_widget.dart';
-import 'package:portfolio_website/widgets/roulette.dart';
-import '/widgets/info_widget.dart';
+
+import '../../widgets/desktop/games_screen.dart';
 
 // ignore: must_be_immutable
 class DesktopBody extends StatelessWidget {
-  var homeKey = GlobalKey();
-  var aboutKey = GlobalKey();
-  var projectsKey = GlobalKey();
+  final homeKey = GlobalKey();
+  final aboutKey = GlobalKey();
+  final projectsKey = GlobalKey();
+  final workExperienceKey = GlobalKey();
+  final achievementsKey = GlobalKey();
 
   DesktopBody({super.key});
 
@@ -45,6 +52,9 @@ class DesktopBody extends StatelessWidget {
             AppButton(scrollTo: () => scrollTo(homeKey), text: 'Home'),
             AppButton(scrollTo: () => scrollTo(aboutKey), text: 'About'),
             AppButton(scrollTo: () => scrollTo(projectsKey), text: 'Projects'),
+            AppButton(
+                scrollTo: () => scrollTo(workExperienceKey),
+                text: 'WorkExperience'),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: TextButton(
@@ -91,28 +101,67 @@ class DesktopBody extends StatelessWidget {
               ),
               const SizedBox(height: 35),
               // about me section
+              Padding(
+                padding: const EdgeInsets.only(left: 50),
+                child: Text(
+                  'About me',
+                  style: const TextStyle(
+                      fontSize: 30, fontWeight: FontWeight.bold),
+                  key: aboutKey,
+                ),
+              ),
+              const SizedBox(height: 15),
+              const AboutWidget(isDesk: true),
+              const SizedBox(height: 35),
+              // skills section
               const Padding(
                 padding: EdgeInsets.only(left: 50),
                 child: Text(
-                  'About me',
+                  'Skills',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
               ),
               const SizedBox(height: 15),
-              AboutWidget(key: aboutKey),
+              const HorizontalSkillList(),
               const SizedBox(height: 35),
-              // personal projects section
-              const Padding(
-                padding: EdgeInsets.only(left: 50),
+              // work experience section
+              Padding(
+                padding: const EdgeInsets.only(left: 50),
                 child: Text(
-                  'Personal projects',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  'WorkExperience',
+                  style: const TextStyle(
+                      fontSize: 30, fontWeight: FontWeight.bold),
+                  key: workExperienceKey,
                 ),
               ),
-              SizedBox(
+              const WorkExpCarousel(),
+              const SizedBox(height: 35),
+              // achievements section
+              Padding(
+                padding: const EdgeInsets.only(left: 50),
+                child: Text(
+                  'Achievements',
+                  style: const TextStyle(
+                      fontSize: 30, fontWeight: FontWeight.bold),
+                  key: achievementsKey,
+                ),
+              ),
+              const AchievementsWidget(isForDesk: true),
+              const SizedBox(height: 35),
+              // personal projects section
+              Padding(
+                padding: const EdgeInsets.only(left: 50),
+                child: Text(
+                  'Personal projects',
+                  style: const TextStyle(
+                      fontSize: 30, fontWeight: FontWeight.bold),
+                  key: projectsKey,
+                ),
+              ),
+              const SizedBox(
                 width: double.infinity,
                 height: 300,
-                child: PersonalProjects(key: projectsKey),
+                child: PersonalProjects(),
               ),
               const SizedBox(height: 35),
               // ROULETTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
@@ -123,7 +172,9 @@ class DesktopBody extends StatelessWidget {
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
               ),
-              const RouletteScreen(fontSize: 25),
+              const GamesScreen(),
+              const SizedBox(height: 20),
+              const Footer(),
             ],
           ),
         ),

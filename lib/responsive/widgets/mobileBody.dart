@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_website/widgets/achievements_widget.dart';
+import 'package:portfolio_website/widgets/footer.dart';
 import 'package:portfolio_website/widgets/mobile/info_widget_mobile.dart';
 import 'package:portfolio_website/widgets/mobile/personal_projects_mobile.dart';
 import 'package:portfolio_website/widgets/mobile/social_links.dart';
+import 'package:portfolio_website/widgets/mobile/vertical_skill_list.dart';
+import 'package:portfolio_website/widgets/mobile/work_exp_carousel_m.dart';
 import '../../widgets/about_widget.dart';
 import '../../widgets/fading_text_animation.dart';
-import '../../widgets/roulette.dart';
+import '../../widgets/mobile/games_screen_mob.dart';
 import '/widgets/mobile/custom_drawer.dart';
 
 class MobileBody extends StatelessWidget {
   final homeKey = GlobalKey();
   final aboutKey = GlobalKey();
   final projectsKey = GlobalKey();
+  final achievementsKey = GlobalKey();
+  final workExpKey = GlobalKey();
 
   MobileBody({super.key});
 
@@ -23,20 +29,25 @@ class MobileBody extends StatelessWidget {
         iconTheme: const IconThemeData(color: Colors.black),
       ),
       drawer: CustomDrawer(
-          homeKey: homeKey, aboutKey: aboutKey, projectsKey: projectsKey),
+        homeKey: homeKey,
+        aboutKey: aboutKey,
+        projectsKey: projectsKey,
+        achievementsKey: achievementsKey,
+        workExpKey: workExpKey,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Welcome to my portfolio!",
-                        style: TextStyle(fontSize: 20)),
+                    Text("Welcome to my portfolio!",
+                        key: homeKey, style: const TextStyle(fontSize: 20)),
                     const SizedBox(width: 5),
                     Image.network(
                         'https://i.ibb.co/tMcyKSG/hello-hand-emoji-web.webp',
@@ -46,23 +57,25 @@ class MobileBody extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  // info column
-                  InfoWidgetMobile(key: homeKey),
-                  // Image with me
-                  SizedBox(
-                    width: 100,
-                    height: 100,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(50),
-                      child: Image.network(
-                        'https://i.ibb.co/Hhnmr8X/poza-Cu-Mn-Low-WEB.webp',
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    // info column
+                    const InfoWidgetMobile(),
+                    // Image with me
+                    SizedBox(
+                      width: 100,
+                      height: 100,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: Image.network(
+                          'https://i.ibb.co/Hhnmr8X/poza-Cu-Mn-Low-WEB.webp',
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               const SizedBox(height: 35),
               const Center(
@@ -72,26 +85,64 @@ class MobileBody extends StatelessWidget {
               ),
               const SizedBox(height: 35),
               // about me section
-              const Center(
+              Center(
                 child: Text(
                   'About me',
+                  style: const TextStyle(
+                      fontSize: 30, fontWeight: FontWeight.bold),
+                  key: aboutKey,
+                ),
+              ),
+              const SizedBox(height: 15),
+              const AboutWidget(isDesk: false),
+              const SizedBox(height: 35),
+              // skills section
+              const Center(
+                child: Text(
+                  'Skills',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
               ),
               const SizedBox(height: 15),
-              AboutWidget(key: aboutKey),
+              const VerticalSkillList(),
               const SizedBox(height: 35),
-              // personal projects section
-              const Center(
+              // work experience section
+              Center(
                 child: Text(
-                  'Personal projects',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  'WorkExperience',
+                  style: const TextStyle(
+                      fontSize: 30, fontWeight: FontWeight.bold),
+                  key: workExpKey,
                 ),
               ),
-              SizedBox(
+              const SizedBox(height: 15),
+              const WorkExpCarouselMob(),
+              const SizedBox(height: 35),
+              // achievements section
+              Center(
+                child: Text(
+                  'Achievements',
+                  style: const TextStyle(
+                      fontSize: 30, fontWeight: FontWeight.bold),
+                  key: achievementsKey,
+                ),
+              ),
+              const SizedBox(height: 15),
+              const AchievementsWidget(isForDesk: false),
+              const SizedBox(height: 35),
+              // personal projects section
+              Center(
+                child: Text(
+                  'Personal projects',
+                  style: const TextStyle(
+                      fontSize: 30, fontWeight: FontWeight.bold),
+                  key: projectsKey,
+                ),
+              ),
+              const SizedBox(
                 width: double.infinity,
                 height: 300,
-                child: PersonalProjectsMobile(key: projectsKey),
+                child: PersonalProjectsMobile(),
               ),
               const SizedBox(height: 35),
               // ROULETTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
@@ -101,10 +152,11 @@ class MobileBody extends StatelessWidget {
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
               ),
-              const RouletteScreen(fontSize: 18),
+              const GamesScreenMob(),
               const SizedBox(height: 20),
               // social links
               const SocialLinks(),
+              const Footer(),
             ],
           ),
         ),
