@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import './homepage.dart';
 
-// ALWAYS USE CANVASKIT FOR RENDER: flutter build web --web-renderer canvaskit
+// ALWAYS USE CANVASKIT FOR RENDER: flutter build web --web-renderer canvaskit --release
 void main() {
   runApp(const ProviderScope(child: MyApp()));
 }

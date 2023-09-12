@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/circle_widget.dart';
-import '../../widgets/cross_widget.dart';
+import '../../widgets/title_circle_widget.dart';
+import '../../widgets/title_cross_widget.dart';
 
 class GameTitleWidget extends StatelessWidget {
   const GameTitleWidget({super.key});
@@ -25,7 +25,7 @@ class GameTitleWidget extends StatelessWidget {
             SizedBox(
               width: 54.0,
               height: 54.0,
-              child: CrossWidget(
+              child: TitleCrossWidget(
                 strokeWidth: 18.0,
               ),
             ),
@@ -35,7 +35,7 @@ class GameTitleWidget extends StatelessWidget {
             SizedBox(
               width: 54.0,
               height: 54.0,
-              child: CircleWidget(
+              child: TitleCircleWidget(
                 strokeWidth: 16.0,
               ),
             ),

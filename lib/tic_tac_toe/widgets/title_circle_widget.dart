@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 import '../constants/ui_constants.dart';
 
-class CircleWidget extends StatelessWidget {
+class TitleCircleWidget extends StatelessWidget {
   final Color color;
   final double strokeWidth;
-  const CircleWidget({
+  const TitleCircleWidget({
     Key? key,
     this.color = circleWidgetColor,
     this.strokeWidth = widgetStrokeWidth,
@@ -15,13 +15,10 @@ class CircleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final deviceSize = MediaQuery.of(context).size;
-
     return CustomPaint(
       painter: _CirclePainter(
         color: color,
         strokeWidth: strokeWidth,
-        deviceSize: deviceSize,
       ),
     );
   }
@@ -30,21 +27,18 @@ class CircleWidget extends StatelessWidget {
 class _CirclePainter extends CustomPainter {
   final Color color;
   final double strokeWidth;
-  final Size deviceSize;
 
-  _CirclePainter(
-      {required this.color,
-      required this.strokeWidth,
-      required this.deviceSize});
+  _CirclePainter({
+    required this.color,
+    required this.strokeWidth,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
-    final isMobile = deviceSize.width < 600;
-
     final centerX = size.width / 2;
     final centerY = size.height / 2;
     final center = Offset(centerX, centerY);
-    final radius = isMobile ? 18.0 : min(centerX, centerY);
+    final radius = min(centerX, centerY);
 
     canvas.drawCircle(
         center,
