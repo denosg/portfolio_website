@@ -1,4 +1,5 @@
 // ignore: file_names
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/widgets/achievements_widget.dart';
 import 'package:portfolio_website/widgets/desktop/horizontal_skill_list.dart';
@@ -86,8 +87,9 @@ class DesktopBody extends StatelessWidget {
                     height: 200,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(50),
-                      child: Image.network(
-                        'https://i.ibb.co/Hhnmr8X/poza-Cu-Mn-Low-WEB.webp',
+                      child: CachedNetworkImage(
+                        imageUrl:
+                            'https://i.ibb.co/Hhnmr8X/poza-Cu-Mn-Low-WEB.webp',
                       ),
                     ),
                   ),

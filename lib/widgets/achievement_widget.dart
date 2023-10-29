@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio_website/widgets/shimmer_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AchievementWidget extends StatelessWidget {
@@ -27,6 +29,9 @@ class AchievementWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;
 
+    final width = isForDesk ? null : deviceSize.width * 0.7;
+    final height = isForDesk ? deviceSize.height * 0.4 : null;
+
     return Column(
       children: [
         // white space
@@ -52,10 +57,14 @@ class AchievementWidget extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
-                    child: Image.network(
-                      photoUrl,
-                      width: isForDesk ? null : deviceSize.width * 0.7,
-                      height: isForDesk ? deviceSize.height * 0.4 : null,
+                    child: CachedNetworkImage(
+                      imageUrl: photoUrl,
+                      placeholder: (context, url) =>
+                          ShimmerWidget(width: width, height: height),
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
+                      width: width,
+                      height: height,
                     ),
                   ),
                 ),

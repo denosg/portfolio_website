@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/widgets/achievements_widget.dart';
 import 'package:portfolio_website/widgets/footer.dart';
@@ -49,8 +50,9 @@ class MobileBody extends StatelessWidget {
                     Text("Welcome to my portfolio!",
                         key: homeKey, style: const TextStyle(fontSize: 20)),
                     const SizedBox(width: 5),
-                    Image.network(
-                        'https://i.ibb.co/tMcyKSG/hello-hand-emoji-web.webp',
+                    CachedNetworkImage(
+                        imageUrl:
+                            'https://i.ibb.co/tMcyKSG/hello-hand-emoji-web.webp',
                         width: 30,
                         height: 30),
                   ],
@@ -69,8 +71,9 @@ class MobileBody extends StatelessWidget {
                       height: 100,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(50),
-                        child: Image.network(
-                          'https://i.ibb.co/Hhnmr8X/poza-Cu-Mn-Low-WEB.webp',
+                        child: CachedNetworkImage(
+                          imageUrl:
+                              'https://i.ibb.co/Hhnmr8X/poza-Cu-Mn-Low-WEB.webp',
                         ),
                       ),
                     ),

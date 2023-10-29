@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:portfolio_website/models/work_exp.dart';
-import 'package:portfolio_website/providers/photo_list.dart';
-import 'package:portfolio_website/providers/text_hupu_app.dart';
+import 'package:portfolio_website/providers/work_exp_prov.dart';
 import 'package:portfolio_website/widgets/desktop/work_experience_projects.dart';
 
 class WorkExpCarousel extends StatefulWidget {
@@ -15,16 +13,6 @@ class WorkExpCarousel extends StatefulWidget {
 class _WorkExpCarouselState extends State<WorkExpCarousel> {
   final controller = CarouselController();
   int currentPageIndex = 0;
-
-  // more apps / experience add here ->
-  List<WorkExp> worKExpList = [
-    WorkExp(
-        companyNameAndApp: "Monad Systems - Hupu app",
-        workTime: "july - present",
-        linkForApp: null,
-        tasksIveDone: tasksIveDoneHupu,
-        appImage: hupuAppImg),
-  ];
 
   @override
   Widget build(BuildContext context) {

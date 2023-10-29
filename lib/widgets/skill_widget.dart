@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/models/skill.dart';
 
@@ -13,7 +14,7 @@ class SkillWidget extends StatelessWidget {
       width: deviceSize.width * 0.12,
       child: Row(
         children: [
-          Image.network(skill.photoUrl, height: 48),
+          CachedNetworkImage(imageUrl: skill.photoUrl, height: 48),
           const SizedBox(width: 10),
           Expanded(
             child: Text(

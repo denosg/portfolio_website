@@ -41,6 +41,8 @@ dependencies:
   google_fonts: ^4.0.4
   get: ^4.6.1
   flutter_riverpod: ^2.3.10
+  shimmer: ^3.0.0
+  cached_network_image: ^3.3.0
 
 dev_dependencies:
   flutter_test:

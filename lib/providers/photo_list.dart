@@ -63,7 +63,7 @@ const String urlQuest = "https://github.com/denosg/quest_realm";
 
 //WorkExperience ->
 //MonadSystems -> Hupu
-const String hupuAppImg = "https://i.ibb.co/WVmTP3S/smartmockups-lltjbf8y.jpg";
+const String hupuAppImg = "https://i.ibb.co/NFWCr0k/hupu-app.jpg";
 // https://i.ibb.co/W32Ly6X/hupu.jpg
 
 //Achievements ->

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/widgets/desktop/tasks_widget.dart';
 import 'package:url_launcher/url_launcher.dart' as url;
@@ -34,7 +35,7 @@ class WorkExperience extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // info related work // TODO: Add link to app page in Google Play Store / iOS play store when user clicks on app
+          // info related work
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -75,8 +76,10 @@ class WorkExperience extends StatelessWidget {
                     padding: const EdgeInsets.all(15),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15),
-                      child: Image.network(appImg,
-                          fit: BoxFit.cover, height: deviceSize.height * 0.5),
+                      child: CachedNetworkImage(
+                          imageUrl: appImg,
+                          fit: BoxFit.cover,
+                          height: deviceSize.height * 0.5),
                     ),
                   ),
                 ),

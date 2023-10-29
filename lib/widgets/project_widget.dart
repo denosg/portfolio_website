@@ -1,6 +1,8 @@
 import 'dart:async';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio_website/widgets/shimmer_widget.dart';
 import 'package:url_launcher/url_launcher.dart' as url;
 
 class ProjectWidget extends StatefulWidget {
@@ -100,9 +102,15 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                                 padding: const EdgeInsets.all(15),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(15),
-                                  child: Image.network(
-                                    widget.photoList[hoveredIndex],
+                                  child: CachedNetworkImage(
+                                    filterQuality: FilterQuality.high,
                                     fit: BoxFit.cover,
+                                    imageUrl: widget.photoList[hoveredIndex],
+                                    placeholder: (context, url) =>
+                                        const ShimmerWidget(
+                                            width: null, height: null),
+                                    errorWidget: (context, url, error) =>
+                                        const Icon(Icons.error),
                                   ),
                                 ),
                               ),
