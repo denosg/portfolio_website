@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:portfolio_website/providers/link_prov.dart';
 import 'package:portfolio_website/providers/tasks_dim_prov.dart';
 import 'package:portfolio_website/widgets/desktop/tasks_widget.dart';
 
@@ -23,25 +24,46 @@ class WorkExperienceMob extends HookConsumerWidget {
     final expanded = useState(false);
     final deviceSize = MediaQuery.of(context).size;
     final taskDimProv = ref.read(tasksDimProv.notifier);
+    bool hasUrl = urlForApp == null ? false : true;
+
+    final link = Link();
 
     return Column(
       children: [
         // app name
-        Text(companyAndApp,
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
-        // white space
-        SizedBox(
-          width: deviceSize.height * 0.05,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Column(
+              children: [
+                Text(companyAndApp,
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.w600)),
+                // white space
+                SizedBox(
+                  width: deviceSize.height * 0.05,
+                ),
+                // time spent
+                Text(timeSpent,
+                    style: const TextStyle(
+                        fontSize: 15, fontWeight: FontWeight.w500)),
+              ],
+            ),
+            if (hasUrl)
+              IconButton(
+                icon: const Icon(Icons.link),
+                color: Colors.purple,
+                onPressed: () => link.openLink(urlForApp!),
+              ),
+          ],
         ),
-        // time spent
-        Text(timeSpent,
-            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500)),
+
         // tasks
         Column(
           children: [
             AnimatedContainer(
               duration: const Duration(milliseconds: 300),
-              height: expanded.value ? tasks.length * 65.0 + 27 : 64,
+              height: expanded.value ? tasks.length * 65.0 + 27 : 56,
               child: Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),

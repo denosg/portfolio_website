@@ -23,7 +23,8 @@ class WorkExpCarouselMobState extends ConsumerState<WorkExpCarouselMob> {
     WorkExp(
         companyNameAndApp: "Monad Systems - Hupu app",
         workTime: "july - present",
-        linkForApp: null,
+        linkForApp:
+            'https://www.realitatea.net/stiri/actual/premiera-la-un-spital-de-stat-din-romania-familiile-pacientilor-upu-informate-in-timp-real-despre-starea-acestora_653aabcd36783433157b4662',
         tasksIveDone: tasksIveDoneHupu,
         appImage: hupuAppImg),
   ];
@@ -47,29 +48,33 @@ class WorkExpCarouselMobState extends ConsumerState<WorkExpCarouselMob> {
             ),
           ),
         Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: CarouselSlider.builder(
-            carouselController: controller,
-            itemCount: worKExpList.length,
-            itemBuilder: (context, index, realIndex) {
-              final workExp = worKExpList[index];
-              return WorkExperienceMob(
-                  urlForApp: workExp.linkForApp,
-                  companyAndApp: workExp.companyNameAndApp,
-                  timeSpent: workExp.workTime,
-                  tasks: workExp.tasksIveDone,
-                  appImg: workExp.appImage);
-            },
-            options: CarouselOptions(
-              enlargeCenterPage: false,
-              height: tasksDim,
-              viewportFraction: 1,
-              onPageChanged: (index, reason) {
-                setState(() {
-                  ref.read(tasksDimProv.notifier).reset();
-                  currentPageIndex = index;
-                });
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: AnimatedContainer(
+            height: tasksDim,
+            duration: const Duration(milliseconds: 300),
+            child: CarouselSlider.builder(
+              carouselController: controller,
+              itemCount: worKExpList.length,
+              itemBuilder: (context, index, realIndex) {
+                final workExp = worKExpList[index];
+                return WorkExperienceMob(
+                    urlForApp: workExp.linkForApp,
+                    companyAndApp: workExp.companyNameAndApp,
+                    timeSpent: workExp.workTime,
+                    tasks: workExp.tasksIveDone,
+                    appImg: workExp.appImage);
               },
+              options: CarouselOptions(
+                enlargeCenterPage: false,
+                height: tasksDim,
+                viewportFraction: 1,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    ref.read(tasksDimProv.notifier).reset();
+                    currentPageIndex = index;
+                  });
+                },
+              ),
             ),
           ),
         ),
