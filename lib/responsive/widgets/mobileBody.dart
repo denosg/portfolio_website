@@ -120,7 +120,6 @@ class MobileBody extends StatelessWidget {
               ),
               const SizedBox(height: 15),
               const WorkExpCarouselMob(),
-              const SizedBox(height: 35),
               // achievements section
               Center(
                 child: Text(

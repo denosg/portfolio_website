@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio_website/models/work_exp.dart';
 import 'package:portfolio_website/providers/photo_list.dart';
+import 'package:portfolio_website/providers/tasks_dim_prov.dart';
 import 'package:portfolio_website/providers/text_hupu_app.dart';
 import 'package:portfolio_website/widgets/mobile/work_exp_proj_m.dart';
 
-class WorkExpCarouselMob extends StatefulWidget {
+class WorkExpCarouselMob extends ConsumerStatefulWidget {
   const WorkExpCarouselMob({super.key});
 
   @override
-  State<WorkExpCarouselMob> createState() => _WorkExpCarouselMobState();
+  WorkExpCarouselMobState createState() => WorkExpCarouselMobState();
 }
 
-class _WorkExpCarouselMobState extends State<WorkExpCarouselMob> {
+class WorkExpCarouselMobState extends ConsumerState<WorkExpCarouselMob> {
   final controller = CarouselController();
   int currentPageIndex = 0;
 
@@ -29,6 +31,7 @@ class _WorkExpCarouselMobState extends State<WorkExpCarouselMob> {
   @override
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;
+    final tasksDim = ref.watch(tasksDimProv);
 
     return Stack(
       alignment: Alignment.center,
@@ -45,30 +48,28 @@ class _WorkExpCarouselMobState extends State<WorkExpCarouselMob> {
           ),
         Padding(
           padding: const EdgeInsets.only(left: 10),
-          child: SizedBox(
-            width: deviceSize.width * 0.8,
-            child: CarouselSlider.builder(
-              carouselController: controller,
-              itemCount: worKExpList.length,
-              itemBuilder: (context, index, realIndex) {
-                final workExp = worKExpList[index];
-                return WorkExperienceMob(
-                    urlForApp: workExp.linkForApp,
-                    companyAndApp: workExp.companyNameAndApp,
-                    timeSpent: workExp.workTime,
-                    tasks: workExp.tasksIveDone,
-                    appImg: workExp.appImage);
+          child: CarouselSlider.builder(
+            carouselController: controller,
+            itemCount: worKExpList.length,
+            itemBuilder: (context, index, realIndex) {
+              final workExp = worKExpList[index];
+              return WorkExperienceMob(
+                  urlForApp: workExp.linkForApp,
+                  companyAndApp: workExp.companyNameAndApp,
+                  timeSpent: workExp.workTime,
+                  tasks: workExp.tasksIveDone,
+                  appImg: workExp.appImage);
+            },
+            options: CarouselOptions(
+              enlargeCenterPage: false,
+              height: tasksDim,
+              viewportFraction: 1,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  ref.read(tasksDimProv.notifier).reset();
+                  currentPageIndex = index;
+                });
               },
-              options: CarouselOptions(
-                height: deviceSize.height * 0.57,
-                enlargeCenterPage: false,
-                viewportFraction: 1,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    currentPageIndex = index;
-                  });
-                },
-              ),
             ),
           ),
         ),

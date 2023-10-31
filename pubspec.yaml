@@ -43,6 +43,8 @@ dependencies:
   flutter_riverpod: ^2.3.10
   shimmer: ^3.0.0
   cached_network_image: ^3.3.0
+  hooks_riverpod: ^2.4.0
+  flutter_hooks: ^0.20.1
 
 dev_dependencies:
   flutter_test:

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:portfolio_website/providers/tasks_dim_prov.dart';
 import 'package:portfolio_website/widgets/desktop/tasks_widget.dart';
 
-class WorkExperienceMob extends StatelessWidget {
+class WorkExperienceMob extends HookConsumerWidget {
   final String? urlForApp;
   final String companyAndApp;
   final String timeSpent;
@@ -14,12 +17,14 @@ class WorkExperienceMob extends StatelessWidget {
       required this.timeSpent,
       required this.tasks,
       required this.appImg});
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final expanded = useState(false);
     final deviceSize = MediaQuery.of(context).size;
+    final taskDimProv = ref.read(tasksDimProv.notifier);
 
     return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         // app name
         Text(companyAndApp,
@@ -32,14 +37,57 @@ class WorkExperienceMob extends StatelessWidget {
         Text(timeSpent,
             style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500)),
         // tasks
-        SizedBox(
-          height: deviceSize.height * 0.5,
-          width: deviceSize.width * 0.7,
-          child: ListView.builder(
-            itemBuilder: (context, index) => TaskWidget(task: tasks[index]),
-            itemCount: tasks.length,
-          ),
-        )
+        Column(
+          children: [
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 300),
+              height: expanded.value ? tasks.length * 65.0 + 27 : 64,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: const Text(
+                        "Show more details:",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      trailing: IconButton(
+                        onPressed: () {
+                          expanded.value = !expanded.value;
+                          if (expanded.value == true) {
+                            taskDimProv.setDim(tasks.length * 65.0 + 70);
+                          } else {
+                            taskDimProv.reset();
+                          }
+                        },
+                        iconSize: 20,
+                        icon: Icon(expanded.value
+                            ? Icons.expand_less
+                            : Icons.expand_more),
+                      ),
+                    ),
+                    AnimatedContainer(
+                        duration: const Duration(milliseconds: 300),
+                        height: expanded.value ? tasks.length * 65.0 - 29 : 0,
+                        child: Column(
+                          children: tasks
+                              .map((task) => Padding(
+                                    padding: const EdgeInsets.only(
+                                        bottom: 8, left: 10),
+                                    child: TaskWidget(
+                                      task: task,
+                                    ),
+                                  ))
+                              .toList(),
+                        ))
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ],
     );
   }
