@@ -39,7 +39,9 @@ class AchievementWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const Icon(Icons.arrow_right_rounded, color: Colors.purple),
-            Expanded(child: Text(title, style: const TextStyle(fontSize: 20))),
+            Expanded(
+                child: Text(title,
+                    style: TextStyle(fontSize: isForDesk ? 20 : 15))),
             IconButton(
               icon: const Icon(Icons.link),
               color: Colors.purple,
