@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio_website/widgets/shimmer_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AchievementWidget extends StatelessWidget {
@@ -40,7 +39,7 @@ class AchievementWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const Icon(Icons.arrow_right_rounded, color: Colors.purple),
-            Expanded(child: Text(title)),
+            Expanded(child: Text(title, style: const TextStyle(fontSize: 20))),
             IconButton(
               icon: const Icon(Icons.link),
               color: Colors.purple,
@@ -52,23 +51,22 @@ class AchievementWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: photoUrls
-              .map(
-                (photoUrl) => Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: CachedNetworkImage(
-                      imageUrl: photoUrl,
-                      placeholder: (context, url) =>
-                          ShimmerWidget(width: width, height: height),
-                      errorWidget: (context, url, error) =>
-                          const Icon(Icons.error),
-                      width: width,
-                      height: height,
+              .map((photoUrl) => Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15),
+                      child: CachedNetworkImage(
+                        imageUrl: photoUrl,
+                        placeholder: (context, url) => const Center(
+                            child: CircularProgressIndicator(
+                                color: Colors.purple)),
+                        errorWidget: (context, url, error) =>
+                            const Icon(Icons.error),
+                        width: width,
+                        height: height,
+                      ),
                     ),
-                  ),
-                ),
-              )
+                  ))
               .toList(),
         ),
       ],

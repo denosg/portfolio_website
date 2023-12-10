@@ -44,7 +44,7 @@ class _AchievementsWidgetState extends State<AchievementsWidget> {
           child: SizedBox(
             width: deviceSize.width * 0.8,
             height: widget.isForDesk
-                ? deviceSize.height * 0.6
+                ? deviceSize.height * 0.65
                 : deviceSize.height * 0.4,
             child: CarouselSlider.builder(
               carouselController: controller,
@@ -62,7 +62,7 @@ class _AchievementsWidgetState extends State<AchievementsWidget> {
               itemCount: achievements.length,
               options: CarouselOptions(
                 height: widget.isForDesk
-                    ? deviceSize.height * 0.5
+                    ? deviceSize.height * 0.55
                     : deviceSize.height * 0.4,
                 enlargeCenterPage: false,
                 viewportFraction: 1,
