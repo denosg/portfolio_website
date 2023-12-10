@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 
 class GameActionWidget extends ConsumerWidget {
   final GameController controller;
-  const GameActionWidget({Key? key, required this.controller})
-      : super(key: key);
+  const GameActionWidget({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -37,10 +36,9 @@ class _GameActionButton extends StatelessWidget {
   final IconData icon;
   final VoidCallback onPressed;
   const _GameActionButton({
-    Key? key,
     required this.icon,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

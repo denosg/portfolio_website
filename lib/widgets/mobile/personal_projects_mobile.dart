@@ -6,7 +6,7 @@ import 'package:portfolio_website/providers/photo_list.dart';
 import 'package:portfolio_website/widgets/project_widget.dart';
 
 class PersonalProjectsMobile extends StatefulWidget {
-  const PersonalProjectsMobile({Key? key}) : super(key: key);
+  const PersonalProjectsMobile({super.key});
 
   @override
   State<PersonalProjectsMobile> createState() => _PersonalProjectsMobileState();

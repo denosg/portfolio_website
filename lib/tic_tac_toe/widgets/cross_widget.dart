@@ -6,10 +6,10 @@ class CrossWidget extends StatelessWidget {
   final Color color;
   final double strokeWidth;
   const CrossWidget({
-    Key? key,
+    super.key,
     this.color = crossWidgetColor,
     this.strokeWidth = widgetStrokeWidth,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

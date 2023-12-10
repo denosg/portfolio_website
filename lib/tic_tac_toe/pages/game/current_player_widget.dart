@@ -8,8 +8,7 @@ import '../../widgets/cross_widget.dart';
 
 class CurrentPlayerWidget extends StatelessWidget {
   final GameController controller;
-  const CurrentPlayerWidget({Key? key, required this.controller})
-      : super(key: key);
+  const CurrentPlayerWidget({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {

@@ -101,12 +101,11 @@ class _Field extends StatelessWidget {
   final ValueChanged<int> onTap;
   final int playerId;
   const _Field({
-    Key? key,
     required this.index,
     required this.isEnable,
     required this.onTap,
     required this.playerId,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

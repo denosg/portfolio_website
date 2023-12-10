@@ -8,10 +8,10 @@ class TitleCircleWidget extends StatelessWidget {
   final Color color;
   final double strokeWidth;
   const TitleCircleWidget({
-    Key? key,
+    super.key,
     this.color = circleWidgetColor,
     this.strokeWidth = widgetStrokeWidth,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
