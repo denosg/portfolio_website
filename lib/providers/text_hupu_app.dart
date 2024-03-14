@@ -1,12 +1,11 @@
 List<String> tasksIveDoneHupu = [
-  'Worked on a healthcare mobile application for a hospital client. Made significant contributions to the front-end UI/UX design and functionality.',
-  'Developed custom UI screens and views for different user roles and use cases.',
-  'Implemented smooth navigation and intuitive workflows.',
-  'Built reusable component libraries improving code quality.',
-  'Changed the entire decryption/encryption process. -Before my implementation, 25% of important information was lost, I managed with the new implementation to take it down to 0%.',
-  'Created entire DEV environment + separated DEV from PROD.',
-  'Contributed to testing and QA efforts to ensure robust functionality.',
-  'Created Google Cloud Functions + Scheduled Cloud Functions using Node.JS.',
-  'Participated in Scrum sprints, code reviews, and documentation.',
-  'Used version control practices to manage code changes and releases.'
+  'Played a pivotal role in developing a healthcare mobile application for a hospital client, focusing on front-end UI/UX design and functionality enhancements',
+  'Engineered custom UI screens and views for diverse user roles and use cases, ensuring an intuitive user experience',
+  'mproved the decryption/encryption process, reducing data loss from 25% to 0%, enhancing data security',
+  'Implemented Google Cloud Functions and Scheduled Cloud Functions using Node.JS, enhancing backend functionality',
+  'Established a development environment and separated development from production environments for operational stability',
+  'Actively participated in Scrum sprints, conducted code reviews, and contributed to documentation efforts',
+  'Implemented Test-Driven Development (TDD) methodologies to create a caching system, optimizing data retrieval efficiency and reducing server reading costs by 50%',
+  'Provided assistance to colleagues, fostering collaboration and enhancing team productivity',
+  'Leveraged version control practices to manage code changes and releases effectively',
 ];

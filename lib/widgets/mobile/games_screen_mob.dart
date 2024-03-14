@@ -32,16 +32,15 @@ class _GamesScreenMobState extends ConsumerState<GamesScreenMob> {
             items: [
               const RouletteScreen(fontSize: 18),
               AnimatedSwitcher(
-                duration: const Duration(
-                    milliseconds: 500), // Adjust the duration as needed
+                duration: const Duration(milliseconds: 500),
                 child: SizedBox(
-                  key: ValueKey<int>(ticTacToeScreen
-                      .hashCode), // Use a ValueKey to identify changes
+                  key: ValueKey<int>(ticTacToeScreen.hashCode),
                   height: deviceSize.height * 0.6,
                   child: ticTacToeScreen,
                 ),
               ),
             ],
+            carouselController: controller,
             options: CarouselOptions(
               viewportFraction: 1,
               aspectRatio: 0.5,
@@ -50,12 +49,23 @@ class _GamesScreenMobState extends ConsumerState<GamesScreenMob> {
           ),
         ),
         // show to slide drq
-        const SizedBox(
-          height: 30,
-          child: Icon(
+        IconButton(
+          icon: const Icon(
             Icons.compare_arrows_rounded,
             size: 30,
           ),
+          onPressed: () {
+            if (currentPageIndex == 0) {
+              controller.nextPage();
+              setState(() {
+                currentPageIndex = 1;
+              });
+            }
+            controller.previousPage();
+            setState(() {
+              currentPageIndex = 0;
+            });
+          },
         )
       ],
     );

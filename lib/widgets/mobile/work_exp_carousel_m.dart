@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:portfolio_website/models/work_exp.dart';
-import 'package:portfolio_website/providers/photo_list.dart';
 import 'package:portfolio_website/providers/tasks_dim_prov.dart';
-import 'package:portfolio_website/providers/text_hupu_app.dart';
+import 'package:portfolio_website/providers/work_exp_prov.dart';
 import 'package:portfolio_website/widgets/mobile/work_exp_proj_m.dart';
 
 class WorkExpCarouselMob extends ConsumerStatefulWidget {
@@ -19,15 +17,6 @@ class WorkExpCarouselMobState extends ConsumerState<WorkExpCarouselMob> {
   int currentPageIndex = 0;
 
   // more apps / experience add here ->
-  List<WorkExp> worKExpList = [
-    WorkExp(
-        companyNameAndApp: "Monad Systems - Hupu app",
-        workTime: "july - present",
-        linkForApp:
-            'https://www.realitatea.net/stiri/actual/premiera-la-un-spital-de-stat-din-romania-familiile-pacientilor-upu-informate-in-timp-real-despre-starea-acestora_653aabcd36783433157b4662',
-        tasksIveDone: tasksIveDoneHupu,
-        appImage: hupuAppImg),
-  ];
 
   @override
   Widget build(BuildContext context) {

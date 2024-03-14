@@ -108,7 +108,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                                     imageUrl: widget.photoList[hoveredIndex],
                                     placeholder: (context, url) =>
                                         const ShimmerWidget(
-                                            width: null, height: null),
+                                            width: null, height: 450),
                                     errorWidget: (context, url, error) =>
                                         const Icon(Icons.error),
                                   ),
