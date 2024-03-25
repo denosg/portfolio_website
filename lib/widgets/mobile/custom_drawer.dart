@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart' as url;
+import 'package:portfolio_website/common/utils.dart';
 
 class CustomDrawer extends StatelessWidget {
   final GlobalKey homeKey;
@@ -15,17 +15,6 @@ class CustomDrawer extends StatelessWidget {
       required this.projectsKey,
       required this.achievementsKey,
       required this.workExpKey});
-
-  void downloadResume() async {
-    final resumeUrl = Uri.parse(
-        'https://github.com/denosg/resume-host/blob/main/CV%20Denis%20Costelas.pdf');
-
-    if (await url.canLaunchUrl(resumeUrl)) {
-      await url.launchUrl(resumeUrl);
-    } else {
-      throw 'Could not launch $resumeUrl';
-    }
-  }
 
   void scrollTo(GlobalKey key) {
     Scrollable.ensureVisible(key.currentContext!,
@@ -95,9 +84,9 @@ class CustomDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.file_download_rounded),
             title: const Text('Resume'),
-            onTap: () {
+            onTap: () async {
               Navigator.pop(context);
-              downloadResume();
+              await downloadResume();
             },
           ),
         ],

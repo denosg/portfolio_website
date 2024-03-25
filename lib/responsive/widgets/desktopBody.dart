@@ -1,18 +1,21 @@
 // ignore: file_names
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio_website/common/utils.dart';
 import 'package:portfolio_website/widgets/achievements_widget.dart';
 import 'package:portfolio_website/widgets/desktop/horizontal_skill_list.dart';
 import 'package:portfolio_website/widgets/desktop/info_widget.dart';
 import 'package:portfolio_website/widgets/desktop/personal_projects_widget.dart';
 import 'package:portfolio_website/widgets/desktop/work_exp_carousel.dart';
 import 'package:portfolio_website/widgets/footer.dart';
-import 'package:url_launcher/url_launcher.dart' as url;
 import 'package:portfolio_website/app_bar_section/app_button.dart';
 import 'package:portfolio_website/widgets/about_widget.dart';
 import 'package:portfolio_website/widgets/fading_text_animation.dart';
 
 import '../../widgets/desktop/games_screen.dart';
+
+final showLoading = StateProvider.autoDispose<bool>((ref) => false);
 
 // ignore: must_be_immutable
 class DesktopBody extends StatelessWidget {
@@ -23,17 +26,6 @@ class DesktopBody extends StatelessWidget {
   final achievementsKey = GlobalKey();
 
   DesktopBody({super.key});
-
-  void downloadResume() async {
-    final resumeUrl = Uri.parse(
-        'https://github.com/denosg/resume-host/blob/main/CV%20Denis%20Costelas.pdf');
-
-    if (await url.canLaunchUrl(resumeUrl)) {
-      await url.launchUrl(resumeUrl);
-    } else {
-      throw 'Could not launch $resumeUrl';
-    }
-  }
 
   void scrollTo(GlobalKey key) {
     Scrollable.ensureVisible(key.currentContext!,
@@ -56,11 +48,11 @@ class DesktopBody extends StatelessWidget {
             AppButton(
                 scrollTo: () => scrollTo(workExperienceKey),
                 text: 'WorkExperience'),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
               child: TextButton(
                 onPressed: downloadResume,
-                child: const Text('Resume',
+                child: Text('Resume',
                     style: TextStyle(
                         fontWeight: FontWeight.w900,
                         fontSize: 20,

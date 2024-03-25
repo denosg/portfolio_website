@@ -85,4 +85,4 @@ const String sqlUrl = "https://i.ibb.co/0tw9Jnj/sql.png";
 const String noSqlUrl = "https://i.ibb.co/pLSkfpg/icons8-nosql-48.png";
 const String dartUrl = "https://i.ibb.co/9ppmNs8/dart.png";
 const String firebaseUrl = "https://i.ibb.co/FgTqqn6/firebase.png";
-const String nodeJsUrl = "https://iili.io/JWOCFb2.md.png";
+const String nodeJsUrl = "https://i.ibb.co/WkM5HHY/node.png";
