@@ -10,5 +10,6 @@ Through a carefully curated collection of Flutter projects, this portfolio embod
 
 Prepare to be immersed in a captivating journey through my Flutter universe. Explore the projects, marvel at the seamless responsiveness across devices, and witness firsthand how Flutter has empowered me to create exceptional experiences. Welcome to my portfolio—a digital testament to my growth, my creativity, and my unyielding pursuit of excellence.
 
-You can acces the webiste by pressing on the link in the top right, or here:
-https://denosg.github.io/#/
+**Node.js Express Server for Resume Download**
+
+To provide a seamless experience for downloading my resume, I've created a Node.js Express server. While the server may experience occasional delays due to its free hosting, it ensures reliable access to the resume file. You can access the website through the link in the top right corner or by visiting https://denosg.github.io/#/.
