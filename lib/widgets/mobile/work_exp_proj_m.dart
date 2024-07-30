@@ -24,13 +24,12 @@ class WorkExperienceMob extends HookConsumerWidget {
     final expanded = useState(false);
     final deviceSize = MediaQuery.of(context).size;
     final taskDimProv = ref.read(tasksDimProv.notifier);
-    bool hasUrl = urlForApp == null ? false : true;
+    bool hasUrl = urlForApp != null;
 
     final link = Link();
 
     return Column(
       children: [
-        // app name
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -39,11 +38,9 @@ class WorkExperienceMob extends HookConsumerWidget {
                 Text(companyAndApp,
                     style: const TextStyle(
                         fontSize: 20, fontWeight: FontWeight.w600)),
-                // white space
                 SizedBox(
                   width: deviceSize.height * 0.05,
                 ),
-                // time spent
                 Text(timeSpent,
                     style: const TextStyle(
                         fontSize: 15, fontWeight: FontWeight.w500)),
@@ -57,12 +54,11 @@ class WorkExperienceMob extends HookConsumerWidget {
               ),
           ],
         ),
-
-        // tasks
         Column(
           children: [
             AnimatedContainer(
-              duration: const Duration(milliseconds: 300),
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.easeInOut,
               height: expanded.value ? tasks.length * 65.0 + 27 : 56,
               child: Card(
                 shape: RoundedRectangleBorder(
@@ -78,7 +74,7 @@ class WorkExperienceMob extends HookConsumerWidget {
                       trailing: IconButton(
                         onPressed: () {
                           expanded.value = !expanded.value;
-                          if (expanded.value == true) {
+                          if (expanded.value) {
                             taskDimProv.setDim(tasks.length * 65.0 + 70);
                           } else {
                             taskDimProv.reset();
@@ -91,19 +87,23 @@ class WorkExperienceMob extends HookConsumerWidget {
                       ),
                     ),
                     AnimatedContainer(
-                        duration: const Duration(milliseconds: 300),
-                        height: expanded.value ? tasks.length * 65.0 - 29 : 0,
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeInOut,
+                      height: expanded.value ? tasks.length * 65.0 - 29 : 0,
+                      child: SingleChildScrollView(
                         child: Column(
                           children: tasks
                               .map((task) => Padding(
-                                    padding: const EdgeInsets.only(
-                                        bottom: 8, left: 10),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 8, horizontal: 5),
                                     child: TaskWidget(
                                       task: task,
                                     ),
                                   ))
                               .toList(),
-                        ))
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),

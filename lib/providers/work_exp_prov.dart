@@ -3,22 +3,33 @@ import 'package:portfolio_website/models/work_exp.dart';
 import 'package:portfolio_website/providers/photo_list.dart';
 import 'package:portfolio_website/providers/text_hupu_app.dart';
 
+DateTime july2023 = DateTime(2023, 7);
+
 List<WorkExp> worKExpList = [
   WorkExp(
       companyNameAndApp: "Monad Systems - Hupu app",
-      workTime: getWorkTime(),
-      linkForApp:
-          'https://www.antena3.ro/actualitate/locale/primul-spital-urgenta-romania-informatii-pacienti-timp-real-apartinatori-700992.html',
+      workTime: getWorkTime(july2023),
+      linkForApp: 'https://apartinator.ro/',
       tasksIveDone: tasksIveDoneHupu,
       appImage: hupuAppImg),
 ];
 
-String getWorkTime() {
+String getWorkTime(DateTime startTime) {
   DateTime now = DateTime.now();
-  DateTime july2023 = DateTime(2023, 7);
+  int totalMonths =
+      ((now.year - startTime.year) * 12) + now.month - startTime.month + 1;
 
-  int differenceInMonths =
-      ((now.year - july2023.year) * 12) + now.month - july2023.month + 1;
+  int years = totalMonths ~/ 12;
+  int months = totalMonths % 12;
 
-  return '$differenceInMonths months';
+  String yearPart = years > 0 ? '$years year${years > 1 ? 's' : ''}' : '';
+  String monthPart = months > 0 ? '$months month${months > 1 ? 's' : ''}' : '';
+
+  if (yearPart.isNotEmpty && monthPart.isNotEmpty) {
+    return '$yearPart and $monthPart';
+  } else if (yearPart.isNotEmpty) {
+    return yearPart;
+  } else {
+    return monthPart;
+  }
 }

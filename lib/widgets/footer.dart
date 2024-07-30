@@ -12,7 +12,7 @@ class Footer extends StatelessWidget {
         const Divider(),
         SizedBox(height: deviceSize.height * 0.025),
         const Center(
-          child: Text('Created by Costelas Denis with Flutter Web <3'),
+          child: Text('Created by Costelas Denis <3'),
         ),
         SizedBox(height: deviceSize.height * 0.025),
       ],

@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio_website/providers/photo_list.dart';
 import 'package:portfolio_website/widgets/achievements_widget.dart';
 import 'package:portfolio_website/widgets/footer.dart';
 import 'package:portfolio_website/widgets/mobile/info_widget_mobile.dart';
@@ -51,10 +52,7 @@ class MobileBody extends StatelessWidget {
                         key: homeKey, style: const TextStyle(fontSize: 20)),
                     const SizedBox(width: 5),
                     CachedNetworkImage(
-                        imageUrl:
-                            'https://i.ibb.co/tMcyKSG/hello-hand-emoji-web.webp',
-                        width: 30,
-                        height: 30),
+                        imageUrl: helloHandImgUrl, width: 30, height: 30),
                   ],
                 ),
               ),
@@ -72,8 +70,7 @@ class MobileBody extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(50),
                         child: CachedNetworkImage(
-                          imageUrl:
-                              'https://i.ibb.co/Hhnmr8X/poza-Cu-Mn-Low-WEB.webp',
+                          imageUrl: pozaCuMnLowUrl,
                         ),
                       ),
                     ),
@@ -81,10 +78,13 @@ class MobileBody extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 35),
-              const Center(
-                child: FadingTextAnimation(
-                    text: "Anything is easy if you do what has to be done.",
-                    fontSize: 18),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0),
+                child: Center(
+                  child: FadingTextAnimation(
+                      text: "Anything is easy if you do what has to be done.",
+                      fontSize: 18),
+                ),
               ),
               const SizedBox(height: 35),
               // about me section

@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio_website/common/utils.dart';
+import 'package:portfolio_website/providers/photo_list.dart';
 import 'package:portfolio_website/widgets/achievements_widget.dart';
 import 'package:portfolio_website/widgets/desktop/horizontal_skill_list.dart';
 import 'package:portfolio_website/widgets/desktop/info_widget.dart';
@@ -80,8 +81,7 @@ class DesktopBody extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(50),
                       child: CachedNetworkImage(
-                        imageUrl:
-                            'https://i.ibb.co/Hhnmr8X/poza-Cu-Mn-Low-WEB.webp',
+                        imageUrl: pozaCuMnLowUrl,
                       ),
                     ),
                   ),

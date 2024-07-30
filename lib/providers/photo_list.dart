@@ -1,9 +1,9 @@
 //Beyond First Impressions data ->
 final List<String> beyondFirstList = [
-  "https://i.ibb.co/McbXmW6/1.png",
-  "https://i.ibb.co/DL3W07y/2.png",
-  "https://i.ibb.co/d0HQcNP/3.png",
-  "https://i.ibb.co/93vsYq3/4.png",
+  "https://live.staticflickr.com/65535/53890815071_2292d28a61_o.png",
+  "https://live.staticflickr.com/65535/53891058013_3f27c1470d_o.png",
+  "https://live.staticflickr.com/65535/53890815076_a4493c1840_o.png",
+  "https://live.staticflickr.com/65535/53891233910_424d6ed9f1_o.png",
 ];
 
 const String titleBeyond = "Beyond First Impressions";
@@ -16,10 +16,10 @@ const String urlBeyond =
 
 //Calculator Consum data ->
 final List<String> calcSumList = [
-  "https://i.ibb.co/hdwjn6V/1.png",
-  "https://i.ibb.co/Rg0YhZw/2.png",
-  "https://i.ibb.co/MMqz0nY/3.png",
-  "https://i.ibb.co/YBJdZMP/4.png",
+  "https://live.staticflickr.com/65535/53889902827_58b693067e_o.png",
+  "https://live.staticflickr.com/65535/53891060823_b9e1f0ca8a_o.png",
+  "https://live.staticflickr.com/65535/53891236465_abf710af78_o.png",
+  "https://live.staticflickr.com/65535/53891236460_acc470aec2_o.png",
 ];
 
 const String titleCalc = "Calculator Consum";
@@ -31,11 +31,11 @@ const String urlCalc = "https://github.com/denosg/calculator_consum_flutter";
 
 //Fake Location data ->
 final List<String> fakeLocList = [
-  "https://i.ibb.co/fq1xVL9/1.png",
-  "https://i.ibb.co/PxQXMkc/2.png",
-  "https://i.ibb.co/3zFRy85/3.png",
-  "https://i.ibb.co/X4VvGtv/4.png",
-  "https://i.ibb.co/4JxbWk6/5.png",
+  "https://live.staticflickr.com/65535/53889905362_162db43b74_o.png",
+  "https://live.staticflickr.com/65535/53889905347_3feafa32f2_o.png",
+  "https://live.staticflickr.com/65535/53889905352_d8dd61cbda_o.png",
+  "https://live.staticflickr.com/65535/53891063313_1eb0c4a7c7_o.png",
+  "https://live.staticflickr.com/65535/53891159349_c40f4025ca_o.png",
 ];
 
 const String titleFakeLoc = "Fake Location";
@@ -47,11 +47,11 @@ const String urlFakeLoc = "https://github.com/denosg/Fake-Location";
 
 //QuestRealm data ->
 final List<String> questRealmList = [
-  "https://i.ibb.co/mCz85rt/1.png",
-  "https://i.ibb.co/frGWRSj/2.png",
-  "https://i.ibb.co/ncjSxVS/3.png",
-  "https://i.ibb.co/HHY7KNF/4.png",
-  "https://i.ibb.co/svmkKgm/5.png",
+  "https://live.staticflickr.com/65535/53891161409_b16ae9ee84_o.png",
+  "https://live.staticflickr.com/65535/53890822241_01352b8aa1_o.png",
+  "https://live.staticflickr.com/65535/53890822206_3c42577888_o.png",
+  "https://live.staticflickr.com/65535/53890822236_5d20bd1041_o.png",
+  "https://live.staticflickr.com/65535/53890822226_cf1973e4b8_o.png",
 ];
 
 const String titleQuest = "QuestRealm";
@@ -63,26 +63,48 @@ const String urlQuest = "https://github.com/denosg/quest_realm";
 
 //WorkExperience ->
 //MonadSystems -> Hupu
-const String hupuAppImg = "https://i.ibb.co/NFWCr0k/hupu-app.jpg";
+const String hupuAppImg =
+    "https://live.staticflickr.com/65535/53890041689_263d88fdd5_o.png";
 // https://i.ibb.co/W32Ly6X/hupu.jpg
 
 //Achievements ->
 const List<String> hackathonTakeCare = [
-  "https://i.ibb.co/6R2bvXs/studenti-aplicatii-020423-03.jpg",
-  "https://i.ibb.co/zrcYsfQ/smartmockups-llkr3ray.jpg",
+  "https://live.staticflickr.com/65535/53890152580_758ea7ba11_o.jpg",
+  "https://live.staticflickr.com/65535/53889967783_e98294a642_o.png",
 ];
 const String ticOlympiad =
-    "https://i.ibb.co/KVV08WF/13-Diploma-Premiul-I-Olimpiada-TIC.jpg";
-const String certificatECDL = "https://i.ibb.co/5L6HBCQ/Certificat-ECDL.jpg";
-const String certificatLM3 = "https://i.ibb.co/wcDZnXj/Certificat-LM3.jpg";
+    "https://live.staticflickr.com/65535/53889708816_4262d9c42b_o.jpg";
+const String certificatECDL =
+    "https://live.staticflickr.com/65535/53890050914_33f596aa7d_o.jpg";
+const String certificatLM3 =
+    "https://live.staticflickr.com/65535/53889950233_15a6044108_o.jpg";
 const String englishOlympiad =
-    "https://i.ibb.co/VxsYhSC/Diploma-Olimpiada-Engleza.jpg";
+    "https://live.staticflickr.com/65535/53890054114_9713766db5_o.jpg";
 
-const String androidUrl = "https://i.ibb.co/NnJSys7/android.png";
-const String flutterUrl = "https://i.ibb.co/TvLnYRT/flutter.png";
-const String javaUrl = "https://i.ibb.co/NLdPMyg/java.png";
-const String sqlUrl = "https://i.ibb.co/0tw9Jnj/sql.png";
-const String noSqlUrl = "https://i.ibb.co/pLSkfpg/icons8-nosql-48.png";
-const String dartUrl = "https://i.ibb.co/9ppmNs8/dart.png";
-const String firebaseUrl = "https://i.ibb.co/FgTqqn6/firebase.png";
-const String nodeJsUrl = "https://i.ibb.co/WkM5HHY/node.png";
+const String androidUrl =
+    "https://live.staticflickr.com/65535/53890042085_7c2807b02e_o.png";
+const String flutterUrl =
+    "https://live.staticflickr.com/65535/53889858488_d8f31b2abe_o.png";
+const String javaUrl =
+    "https://live.staticflickr.com/65535/53889620796_e6b243857a_o.png";
+const String sqlUrl =
+    "https://live.staticflickr.com/65535/53889961014_aa027b7e25_o.png";
+const String noSqlUrl =
+    "https://live.staticflickr.com/65535/53889858588_19843c8652_o.png";
+const String dartUrl =
+    "https://live.staticflickr.com/65535/53889851688_8c2ffc1869_o.png";
+const String firebaseUrl =
+    "https://live.staticflickr.com/65535/53889620391_56202ba90a_o.png";
+const String nodeJsUrl =
+    "https://live.staticflickr.com/65535/53889884318_391e554b83_o.png";
+
+const String helloHandImgUrl =
+    "https://live.staticflickr.com/65535/53888752417_650c58e80a_o.png";
+const String facebookImgUrl =
+    "https://live.staticflickr.com/65535/53888758342_0c3e46db5d_o.png";
+const String githubImgUrl =
+    "https://live.staticflickr.com/65535/53889673266_05e57c2022_o.png";
+const String linkedInImgUrl =
+    "https://live.staticflickr.com/65535/53889675646_94cbecf89b_o.png";
+const String pozaCuMnLowUrl =
+    "https://live.staticflickr.com/65535/53889989364_53cf4558b0_o.jpg";

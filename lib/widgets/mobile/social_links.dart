@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio_website/providers/photo_list.dart';
 import 'package:url_launcher/url_launcher.dart' as url;
 
 class SocialLinks extends StatelessWidget {
@@ -26,36 +27,32 @@ class SocialLinks extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(
-              width: 50,
-              height: 50,
+              width: 70,
+              height: 70,
               child: IconButton(
                   onPressed: () {
                     openLink("https://www.facebook.com/costelasdenis/");
                   },
-                  icon: CachedNetworkImage(
-                      imageUrl:
-                          'https://i.ibb.co/c3xmLvF/facebook-black-Web.webp')),
+                  icon: CachedNetworkImage(imageUrl: facebookImgUrl)),
             ),
             SizedBox(
-              width: 50,
-              height: 50,
+              width: 70,
+              height: 70,
               child: IconButton(
                   onPressed: () {
                     openLink("https://github.com/denosg");
                   },
-                  icon: CachedNetworkImage(
-                      imageUrl: 'https://i.ibb.co/478nzgJ/github-Web.webp')),
+                  icon: CachedNetworkImage(imageUrl: githubImgUrl)),
             ),
             SizedBox(
-              width: 50,
-              height: 50,
+              width: 70,
+              height: 70,
               child: IconButton(
                   onPressed: () {
                     openLink(
                         "https://www.linkedin.com/in/costelas-denis-3b1042236/");
                   },
-                  icon: CachedNetworkImage(
-                      imageUrl: 'https://i.ibb.co/WWSR3Kx/linkedin-Web.webp')),
+                  icon: CachedNetworkImage(imageUrl: linkedInImgUrl)),
             ),
           ],
         ),
