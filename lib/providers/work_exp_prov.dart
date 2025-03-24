@@ -7,7 +7,7 @@ DateTime july2023 = DateTime(2023, 7);
 
 List<WorkExp> worKExpList = [
   WorkExp(
-      companyNameAndApp: "Monad Systems - Hupu app",
+      companyNameAndApp: "Monad Systems - Apartinator.ro",
       workTime: getWorkTime(july2023),
       linkForApp: 'https://apartinator.ro/',
       tasksIveDone: tasksIveDoneHupu,

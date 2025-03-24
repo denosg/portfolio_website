@@ -24,7 +24,7 @@ List<Skill> skillList = [
   Skill(skillName: "Flutter", photoUrl: flutterUrl),
   Skill(skillName: "NodeJS", photoUrl: nodeJsUrl),
   Skill(skillName: "Firebase", photoUrl: firebaseUrl),
-  Skill(skillName: "Dart", photoUrl: dartUrl),
+  Skill(skillName: "ASP.NET Core", photoUrl: aspNetCore),
   Skill(skillName: "Android", photoUrl: androidUrl),
   Skill(skillName: "SqLite", photoUrl: sqlUrl),
   Skill(skillName: "NoSql", photoUrl: noSqlUrl),

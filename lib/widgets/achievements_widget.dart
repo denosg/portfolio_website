@@ -13,7 +13,7 @@ class AchievementsWidget extends StatefulWidget {
 }
 
 class _AchievementsWidgetState extends State<AchievementsWidget> {
-  final controller = CarouselController();
+  final controller = CarouselSliderController();
   int currentPageIndex = 0;
 
   @override

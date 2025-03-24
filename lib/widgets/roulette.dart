@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:roulette/roulette.dart';
 import 'package:url_launcher/url_launcher.dart' as url;
@@ -8,6 +7,7 @@ import './arrow_roulette.dart';
 
 class MyRoulette extends StatelessWidget {
   final double fontSize;
+  final RouletteController controller;
 
   const MyRoulette({
     super.key,
@@ -15,14 +15,17 @@ class MyRoulette extends StatelessWidget {
     required this.fontSize,
   });
 
-  final RouletteController controller;
-
   @override
   Widget build(BuildContext context) {
+    final group = RouletteGroup.uniform(
+      2,
+      textBuilder: (index) => index == 0 ? "Yes" : "No",
+      colorBuilder: (index) => index == 0 ? Colors.blue : Colors.orange,
+    );
     return Column(
       children: [
         Text(
-          "Should we collaborate with Denis ?",
+          "Should we collaborate with Denis?",
           style: TextStyle(fontSize: fontSize),
         ),
         const SizedBox(height: 10),
@@ -35,9 +38,8 @@ class MyRoulette extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(top: 30),
                 child: Roulette(
-                  // Provide controller to update its state
+                  group: group,
                   controller: controller,
-                  // Configure roulette's appearance
                   style: const RouletteStyle(
                     dividerThickness: 4,
                     textLayoutBias: .8,
@@ -63,29 +65,14 @@ class RouletteScreen extends StatefulWidget {
   State<RouletteScreen> createState() => _RouletteScreenState();
 }
 
-class _RouletteScreenState extends State<RouletteScreen>
-    with SingleTickerProviderStateMixin {
+class _RouletteScreenState extends State<RouletteScreen> {
   static final _random = Random();
-
   late RouletteController _controller;
 
   @override
   void initState() {
-    // Initialize the controller
-    final group = RouletteGroup([
-      const RouletteUnit.text(
-        "yes",
-        color: Colors.blue,
-        weight: 0.5,
-      ),
-      const RouletteUnit.text(
-        "no",
-        color: Colors.orange,
-        weight: 0.5,
-      ),
-    ]);
-    _controller = RouletteController(vsync: this, group: group);
     super.initState();
+    _controller = RouletteController();
   }
 
   void openLink(String stringUrl) async {
@@ -107,17 +94,17 @@ class _RouletteScreenState extends State<RouletteScreen>
             controller: _controller,
             fontSize: widget.fontSize,
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           ElevatedButton(
-              onPressed: () async {
-                await _controller.rollTo(0, offset: _random.nextDouble());
-                await Future.delayed(const Duration(milliseconds: 700));
-                openLink(
-                    "https://github.com/denosg/resume-host/blob/main/CV%20Denis%20Costelas.pdf");
-              },
-              child: const Text("SPIN THE WHEEL !")),
+            onPressed: () async {
+              await _controller.rollTo(0, offset: _random.nextDouble());
+              await Future.delayed(const Duration(milliseconds: 700));
+              openLink(
+                "https://github.com/denosg/resume-host/blob/main/cv_costelas_denis.pdf",
+              );
+            },
+            child: const Text("SPIN THE WHEEL!"),
+          ),
         ],
       ),
     );

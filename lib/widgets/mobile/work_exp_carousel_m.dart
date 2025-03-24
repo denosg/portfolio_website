@@ -13,7 +13,7 @@ class WorkExpCarouselMob extends ConsumerStatefulWidget {
 }
 
 class WorkExpCarouselMobState extends ConsumerState<WorkExpCarouselMob> {
-  final controller = CarouselController();
+  final controller = CarouselSliderController();
   int currentPageIndex = 0;
 
   // more apps / experience add here ->

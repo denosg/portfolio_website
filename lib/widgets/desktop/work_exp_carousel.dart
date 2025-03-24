@@ -11,7 +11,7 @@ class WorkExpCarousel extends StatefulWidget {
 }
 
 class _WorkExpCarouselState extends State<WorkExpCarousel> {
-  final controller = CarouselController();
+  final controller = CarouselSliderController();
   int currentPageIndex = 0;
 
   @override

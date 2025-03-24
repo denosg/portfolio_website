@@ -13,7 +13,7 @@ class GamesScreenMob extends ConsumerStatefulWidget {
 }
 
 class _GamesScreenMobState extends ConsumerState<GamesScreenMob> {
-  final controller = CarouselController();
+  final controller = CarouselSliderController();
   int currentPageIndex = 0;
 
   @override

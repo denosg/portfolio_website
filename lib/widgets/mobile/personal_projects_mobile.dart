@@ -13,7 +13,7 @@ class PersonalProjectsMobile extends StatefulWidget {
 }
 
 class _PersonalProjectsMobileState extends State<PersonalProjectsMobile> {
-  final controller = CarouselController();
+  final controller = CarouselSliderController();
   int currentPageIndex = 0;
 
   @override

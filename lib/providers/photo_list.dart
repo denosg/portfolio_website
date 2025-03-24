@@ -91,8 +91,8 @@ const String sqlUrl =
     "https://live.staticflickr.com/65535/53889961014_aa027b7e25_o.png";
 const String noSqlUrl =
     "https://live.staticflickr.com/65535/53889858588_19843c8652_o.png";
-const String dartUrl =
-    "https://live.staticflickr.com/65535/53889851688_8c2ffc1869_o.png";
+const String aspNetCore =
+    "https://live.staticflickr.com/65535/54407978654_4385cb4586_o.png";
 const String firebaseUrl =
     "https://live.staticflickr.com/65535/53889620391_56202ba90a_o.png";
 const String nodeJsUrl =
