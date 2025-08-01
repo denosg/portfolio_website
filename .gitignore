@@ -44,4 +44,6 @@ app.*.map.json
 /android/app/release
 
 # Flutter cache location
-.fvm
+
+# FVM Version Cache
+.fvm/
